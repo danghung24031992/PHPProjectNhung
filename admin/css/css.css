@@ -1,0 +1,237 @@
+#sidebar-login input[type=submit]{
+    background: url('../images/but.gif') repeat-x;
+    border: none;
+    color: #FFF;
+    font-size: 11px;
+    padding: 3px;
+    font-weight: bold;
+    margin: 6px 0 0 40px;
+}
+
+#sidebar-login label{
+    font-size:13px;
+    color: #484848;
+    display: block;
+    margin: 8px 0 2px 0;
+}
+#sidebar-login .msg-login{
+    color: red;
+}
+#sidebar-login input[type=text],input[type=password]{
+    font-size: 12px;
+    color: #484848;
+    border: 1px solid #CCC;
+    height: 20px;
+    width: 160px;
+}
+#rightcolumn form{
+    margin: 0;
+    padding: 0 0 0 25px;
+}
+.regis-link{
+    margin: 6px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    color: #1B57B1;
+    display: block;
+}
+#menu-search input[type=text]{
+    background: url('../images/bg_search_text.png') no-repeat;
+    border: none;
+    height: 20px;
+    float: left;
+    width: 230px;
+    padding: 0 10px;
+    color: #484848;
+}
+#menu-search input[type=image]{
+    border: none;
+    height: 20px;
+}
+#menu-search form{
+    margin: 5px 0 0 0;
+    
+}
+.tab-manag{
+    height: 50px;
+    margin-top: 20px;
+    
+}
+.tab-manag a{
+    border: 1px solid #CCC;
+    padding: 5px 26px;
+    margin: 0 10px 0 0;
+    color: #2457D7;
+    font-weight: bold;
+    
+}
+.tab-manag .selected{
+    border: 1px solid #EF5B13;
+    padding: 5px 26px;
+    margin: 0 10px 0 0;
+    color: black;
+    font-weight: bold;
+    background-color: red;
+    margin-left: 600px;
+
+}
+.h1{
+    color: #395108;
+    height: 22px;
+    margin: 0;
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.btn_submit{
+    background: url("../images/but.gif") repeat-x scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 10px 0 0 0px;
+    padding: 5px;
+}
+.txtbox-1{
+    height: 20px;
+    width: 200px;
+    border: 1px solid #CCC;
+}
+.validate{
+    color: #E03507;
+}
+.manager-box th{
+    
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 10px;
+}
+#manager .manager-edit-field{
+    text-align: center;
+    width: 50px;
+}
+#manager .manager-edit-field img{
+    border: none;
+}
+#manager .manager-id-field{
+    text-align: center;
+    width: 50px;
+}
+#manager td, th{
+    font-size: 13px;
+    padding: 2px 4px;
+    color: #0b25ab;
+}
+#manager .manager-title{
+    color: #E66C09;
+    font-size: 13px;
+    font-weight: bold;
+    height: 22px;
+    margin: 0;
+}
+.create-new{
+    margin: 15px 0;
+}
+
+.create-new a{
+    color: #E66C09;    
+}
+#create-cat{
+    margin: 10px 0 20px 0;
+}
+#edit-cat{
+    margin: 10px 0 20px 0;
+}
+#manager .msg{
+    color: red;
+    font-weight: bold;
+}
+.count-table{
+    color: #004992;
+}
+#manager-sp label{
+   display: block;
+    float: left;
+    margin: 5px 0;
+    width: 128px;
+    font-size: 13px;
+}
+#manager-sp input,textarea, select{
+    
+    margin: 5px 0;
+    border: 1px solid #CCC;
+}
+#manager-sp input,select{
+    
+}
+#manager-sp input[type=file]{
+    border: none;
+    width: 200px;
+}
+#manager-sp .btn_submit{
+    margin: 20px 0 20px 128px;
+}
+.box-admin{
+    -moz-border-radius: 6px 6px 6px 6px;
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 200px;
+    margin: 20px 15px 0;
+    width: 480px;
+}
+.title-box-admin{
+    background-color:#86F32F;
+    color: #484848;
+    -moz-border-radius: 6px 6px 0 0;
+    height: 20px;
+    padding: 3px 0 0 10px;
+    font-weight: bold;
+}
+.main-box-admin{
+    padding: 10px;
+    line-height: 22px;
+}
+.thong-ke{
+    color: #21759B;
+    font-size: 14px;
+}
+#top-admin{
+    padding: 10px 20px 0 20px;
+}
+
+#top-admin .top-admin-left{
+    float: left;
+    width: 400px;
+}
+#top-admin .top-admin-left a{
+    font-size: 20px;
+    font-style: italic;
+    
+}
+#top-admin .top-admin-right{
+    float: right;
+    
+}
+#top-admin .top-admin-right a{
+    font-size: 14px;
+}
+.tinhnang-item{
+    width: 340px;
+    float: left;
+}
+#manager-sp input[type=radio]{
+    margin-right: 6px;
+}
+
+
+
+
+
+
+
+
+
