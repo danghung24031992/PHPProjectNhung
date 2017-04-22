@@ -7,7 +7,7 @@
  require_once('lib/wp-db.php');
  require_once('lib/functions.php');
  
- if(kiem_tra_dang_nhap()==false) header("location: dang_nhap.php");
+ // if(kiem_tra_dang_nhap()==false) header("location: dang_nhap.php");
 
  if($_POST){
     $masp_het_hang = cap_nhat_gio_hang($_POST['qty']);
@@ -37,9 +37,19 @@
         $('.chk_same').click(function(){
             if($(this).is(':checked')){
                 
-                var name = $('.name').attr('value');
-                var email = $('.email').attr('value');
-                var phone = $('.phone').attr('value');
+                var name;
+                var email;
+                var phone;
+                <?if(kiem_tra_dang_nhap()==true){?>
+                    name = $('.name').attr('value');
+                    email = $('.email').attr('value');
+                    phone = $('.phone').attr('value');
+                 <?}else{?>
+                    name = $('.name').val();
+                    email = $('.email').val();
+                    phone = $('.phone').val();
+                <?}?>
+
                 var add = $('.add').val();
                 //alert($('.name').val());
                 

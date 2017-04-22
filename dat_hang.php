@@ -3,8 +3,8 @@
     ob_start();
     session_start();
     
-    if(($_SESSION['user']=="") && ($_SESSION['admin']==""))
-        header("location: dang_nhap.php");
+    //if(($_SESSION['user']=="") && ($_SESSION['admin']==""))
+        //header("location: dang_nhap.php");
     
     if(isset($_SESSION['user']))
         $cusID=$_SESSION['user'];
@@ -25,7 +25,6 @@
         $email = $_POST['email'];
         $add = $_POST['add'];
         $phone = $_POST['phone'];
-        
         $kieuKH = ($_POST['chk_same'])?$_POST['chk_same']:0;
         
         $name1 = $_POST['name1'];
@@ -127,30 +126,26 @@
         <form name="checkout" id="checkout" method="post">
             <table cellpadding="5" cellspacing="1" class="checkout shipping-info" id="shipping" width="700px">
                 <tr class="title-checkout"><td colspan="2">Thông tin thanh toán</td></tr>
-                <?
-                $r=$wpdb->get_row("SELECT tenKH, gioiTinh, email, diaChi, dienThoai FROM dt_khachhang WHERE email='$cusID'");
+                <!-- <?
+                //$r=$wpdb->get_row("SELECT tenKH, gioiTinh, email, diaChi, dienThoai FROM dt_khachhang WHERE email='$cusID'");
                 
-                ?>
+                ?> -->
                 <tr class="checkout-info">
                     <td class="checkout-label">Họ tên</td>
-                    <td><input type="text" name="shipp-name" id="shippName" value="<?=$r->tenKH?>" readonly="true" /></td>
-                </tr>
-                <tr class="checkout-info">
-                    <td class="checkout-label">Giới tính</td>
-                    <td><input type="text" name="shipp-sex" id="shippSex"  value="<?=kiem_tra_gioi_tinh($r->gioiTinh)?>" readonly="true" /></td>
+                    <td><input type="text" name="shipp-name" id="shippName" value="<?=$name?>" readonly="true" /></td>
                 </tr>
                 <tr class="checkout-info">
                     <td class="checkout-label">Địa chỉ</td>
-                    <td><input type="text" name="shipp-add" id="shippAdd" value="<?=$r->diaChi?>" readonly="true" /></td>
+                    <td><input type="text" name="shipp-add" id="shippAdd" value="<?=$add?>" readonly="true" /></td>
                 </tr>
                
                 <tr class="checkout-info">
                     <td class="checkout-label">Email</td>
-                    <td><input type="text" name="shipp-email" id="shippEmail" value="<?=$r->email?>" readonly="true" /></td>
+                    <td><input type="text" name="shipp-email" id="shippEmail" value="<?=$email?>" readonly="true" /></td>
                 </tr>
                 <tr class="checkout-info">
                     <td class="checkout-label">Điện thoại</td>
-                    <td><input type="text" name="shipp-phone" id="shippPhone" value="<?=$r->dienThoai?>" readonly="true" /></td>
+                    <td><input type="text" name="shipp-phone" id="shippPhone" value="<?=$phone?>" readonly="true" /></td>
                 </tr>
             </table>
             

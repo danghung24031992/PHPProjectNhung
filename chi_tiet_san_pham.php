@@ -129,20 +129,16 @@
 </div><!--end #maincolumn-->
 <script>
     $('.add-shoppingcart').click(function(){
-        <?php if(kiem_tra_dang_nhap()==true){?>
-          var pid = this.alt;
-           var soLuong = <?php echo  $r->soLuong - dem_so_luong_san_pham_ban($r->maSP);?>;
-          $.ajax({
-            url: 'ajax/ajax_add_shoppingcart.php?pid='+ pid +'&so_luong=' + soLuong,
-            success: function(data) {
-              $('#shoppingcart-header').html(data);
-            }
-          });    
-          <?}else{?>
-            alert("Bạn phải đăng nhập để đặt mua hàng");
-            <?}?>
-          });/*end click event add to shoppingcart*/
-  </script>
+      var pid = this.alt;
+      var soLuong = <?php echo  $r->soLuong - dem_so_luong_san_pham_ban($r->maSP);?>;
+      $.ajax({
+        url: 'ajax/ajax_add_shoppingcart.php?pid='+ pid +'&so_luong=' + soLuong,
+        success: function(data) {
+          $('#shoppingcart-header').html(data);
+      }
+  });    
+  });/*end click event add to shoppingcart*/
+</script>
 <?
     require_once('sidebar-right.php');
     
