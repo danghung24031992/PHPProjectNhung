@@ -402,7 +402,7 @@
                 <div class="manager-box" style="display: <?=($ac=='')?'block':'none'?>" >
                     
                     <table>
-                        <tr><td class="count-table">Có tổng cộng <font color="#B00000"><?=count_san_pham()?></font> SẢN PHẨM</td></tr>
+                        <tr><td class="count-table">CÓ <font color="#B00000"><?=count_san_pham()?></font> SẢN PHẨM</td></tr>
                     </table>
                     <table cellpadding="0" cellspacing="0" border="0" width="90%" class="manager-info">
                         <tr>

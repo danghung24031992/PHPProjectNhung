@@ -57,7 +57,7 @@
         <div class="h1">QUẢN LÝ LOẠI SẢN PHẨM </div>
 		<div class="create-cat">
             <div class="content-manag">
-                <div class="create-new"><a href="quanly_loaisp.php?ac=new">Tạo mới loại sản phẩm</a></div>
+                <div class="create-new"><a href="quanly_loaisp.php?ac=new"> + Tạo mới loại sản phẩm</a></div>
                 <div class="msg"><?=$mssg?></div>
                 
                 <form name="create_cat" method="POST" id="create-cat" action="quanly_loaisp.php?ac=new" style="display:<?=($ac=='new')?'block':'none'?>">
@@ -82,7 +82,7 @@
             
             <div class="manager-box">
                 <table>
-                    <tr><td class="count-table">Có tổng cộng <font color="#B00000"><?=count_loaiSP()?></font> LOẠI SẢN PHẨM</td></tr>
+                    <tr><td class="count-table" style="font-size: 16px;">CÓ  <font color="#B00000"><?=count_loaiSP()?></font> LOẠI SẢN PHẨM</td></tr>
                 </table>
                 <table cellpadding="0" cellspacing="0" border="0" width="76%" class="manager-info">
                     <tr>

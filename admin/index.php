@@ -15,9 +15,9 @@
         <div id="content">
             <div class="main-page">
                 <div class="box-admin" style="width: 350px;">
-                    <div class="title-box-admin">Thống kê </div>
+                    <div class="title-box-admin" >Thống kê </div>
                     <div class="main-box-admin">
-                        <div class="thong-ke">
+                        <div class="thong-ke" style="font-size: 20px; margin-top: 10px">
 							<table cellpadding="3" cellspacing="0" border="0">
 
 								<tr>
@@ -25,6 +25,12 @@
 									<font color="FF00CC" size="4px"><?=count_khach_hang()?>
 									</td>
 									<td>Khách hàng</td>
+								</tr>
+								<tr>
+									<td>
+									<font color="FF00CC" size="4px"><?=count_loaiSP()?>
+									</td>
+									<td>Loại Sản Phẩm</td>
 								</tr>
 								<tr>
 									<td>
