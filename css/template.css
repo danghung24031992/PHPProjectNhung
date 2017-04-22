@@ -1268,3 +1268,7 @@ float:left;
 }
 
 /* fix */
+
+
+
+img.cangiua {display: block; margin-left: auto; margin-right: auto;}

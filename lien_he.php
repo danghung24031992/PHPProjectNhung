@@ -18,8 +18,10 @@ if($_POST){
     $r=$wpdb->query("INSERT INTO dt_lienhe SET tieuDe='$sub', email='$email', phone='$dienthoai', noiDung='$content'");
     
     if(mysql_insert_id()>0)
-        $msg="Bạn đã gửi thành công";
-    else $msg="Bạn đã gủi không thành công";
+       { echo '<script>alert("Thư của bạn đã được gửi."); window.location="index.php";</script>';}
+    else {
+        echo '<script>alert("Thư của bạn chưa được gửi."); window.location="Contact.php";</script>';
+    }
 }
  
 
@@ -59,6 +61,7 @@ if($_POST){
 
 <div id="maincolumn-page">
 	<div class="nopad">
+    <div class="title-page-item">LIÊN HỆ </div>
         <div class="lien-he">
             <form method="POST" name="lien_he" id="lien_he">
                 <div class="err-lienhe"><?=$msg?></div>
@@ -76,9 +79,12 @@ if($_POST){
                         <td><input type="text" name="phone" /></td>
                     </tr>
                     <tr>
+
                         <td><label>Nội dung</label></td>
-                        <td><textarea name="content" rows="7" cols="50"></textarea></td>
+                        <td><textarea name="content" rows="7" cols="65"></textarea></td>
+
                     </tr>
+
                     <tr>
                         <td>&nbsp;</td>
                         <td><input type="image" src="images/gui.png" /></td>
@@ -86,6 +92,12 @@ if($_POST){
                 </table>
 
             </form>
+            <div class="">
+                                    <a href="" style="margin-left: 50px">
+                                        <iframe width="600" height="280" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%207%2F12%2F131%20Phan%20%C4%90%C3%ACnh%20Gi%C3%B3t&key=AIzaSyDhppSdhKVHpN4pH-yYcYmsO8QB1QWVyR4" allowfullscreen> </iframe>
+                                    </a>
+                                </div>
+
         </div>
         
     </div>

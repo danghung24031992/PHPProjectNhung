@@ -118,8 +118,8 @@
     font-weight: bold;
     margin-bottom: 24px;
     text-transform: uppercase;
-    margin-left: 250px;
-    margin-top: 3px;
+    text-align: center;
+    margin-top: 5px;
 }
 .type-product{
     clear: both;
@@ -790,13 +790,15 @@
 }
 .tbl-lien-he input[type=text]{
     border: 1px solid #CCCCCC;
-    height: 22px;
-    width: 250px;
+    height: 40px;
+    width: 450px;
     color: #000000;
+    font-size: 18px
 }
 .tbl-lien-he textarea{
     border: 1px solid #CCCCCC;
     color: #000000;
+    font-size: 16px
 }
 .err-lienhe{
     color: red;
