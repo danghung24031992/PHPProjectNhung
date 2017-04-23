@@ -278,5 +278,4 @@ function lay_ten_san_pham($maSP){
     return "";
 }
 
-
 ?>

@@ -670,4 +670,11 @@ function tong_tien_don_hang($madh){
     return 0;
 }
 
+function debugLog($debugStr){
+    echo $debugStr; die();
+    // echo '<script language="javascript">';
+    // echo 'alert(".$debugStr.")';
+    // echo '</script>';
+}
+
 ?>

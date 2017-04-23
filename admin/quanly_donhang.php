@@ -15,14 +15,25 @@ if(($_GET['ac']=="del") && ($_GET['madh']!="")){
     $madh=$_GET['madh'];
     xoa_don_hang($madh);
 }
-    
+        
 
 ?>
 
 <div id="content">
     <div class="main-page">
     	<div id="manager" >
-            <div class="h1" style="margin-left: 300px">QUẢN LÝ ĐƠN HÀNG </div>
+            <div class="h1">QUẢN LÝ ĐƠN HÀNG </div>
+            <div class="export">
+                <button style="margin-left: 45px;margin-bottom: 20px;" type="button" class="btn btn-info">
+                <a href="export/statistics_day.php" style="color: #fff;">Thống kê theo ngày</a>
+                </button>
+                <button style="margin-bottom: 20px;" type="button" class="btn btn-info">
+                    <a href="export/statistics_month.php" style="color: #fff;">Thống kê theo tháng</a>
+                </button>
+                <button style="margin-bottom: 20px;" type="button" class="btn btn-info">
+                    <a href="export/statictis_year.php" style="color: #fff;">Thống kê theo năm</a>
+                </button>
+            </div>
             <div class="manager-oder">
                 <table cellpadding="0" cellspacing="0" border="0" class="manager-info" style="margin-top: 30px">
                     <tr>

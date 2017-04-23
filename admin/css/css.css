@@ -229,8 +229,9 @@
     margin-right: 6px;
 }
 
-
-
+.export{
+    display: inline-block;
+}
 
 
 

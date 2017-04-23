@@ -49,12 +49,9 @@
                     $soluong=$v[1];
                     $sql="INSERT INTO dt_chitietdonhang SET maDonHang='$maDH', maSP=$masp, donGia=$dongia, soLuong=$soluong";
                     $c+=$wpdb->query($sql);
-                    
                     //Update lai so luong
-                    //$wpdb->query("UPDATE dt_sanpham SET soLuong=soLuong-$soluong WHERE maSP='$masp'");
+                    // $wpdb->query("UPDATE dt_sanpham SET soLuong=soLuong-$soluong WHERE maSP='$masp'");
                 }
-                
-                
                 $wpdb->query("INSERT INTO dt_thanhtoan SET tenKH='$name', diaChi='$add', email='$email', dienThoai='$phone', maHoaDon='$maDH', kieuKH='0'");   
                 $wpdb->query("INSERT INTO dt_thanhtoan SET tenKH='$name1', diaChi='$add1', email='$email1', dienThoai='$phone1', maHoaDon='$maDH', kieuKH='1'");
             }
