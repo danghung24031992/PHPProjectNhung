@@ -88,6 +88,6 @@
                 </div>
                 <div class="clr"></div>
             </div>
-        </div><!--end #content
+        </div> <!-- end #content -->
         
-<?require_once('footer.php')?> -->
+<? require_once('footer.php')?> 

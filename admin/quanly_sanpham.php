@@ -107,6 +107,10 @@
     <div class="main-page">
         <div id="manager" >
             <div class="h1">QUẢN LÝ SẢN PHẨM </div>
+            <div class="h2" style="color: red; font-size: 13px">
+                Ngày <?echo date('d-m-Y')?>, <cite> CÔNG TY CỔ PHẦN THẾ GIỚI SỐ<br />
+                 </cite>
+            </div>
             <div class="tab-manag">
                     <a href="quanly_sanpham.php?ac=new" <?=($ac=="new")?"class='selected'":"" ?>>THÊM MỚI</a>
                     <a href="quanly_sanpham.php" <?=($ac==""||$ac=='edit')?"class='selected'":"" ?>>CẬP NHẬT</a>

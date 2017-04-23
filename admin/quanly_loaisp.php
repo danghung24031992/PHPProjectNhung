@@ -55,6 +55,10 @@
     <div class="main-page">
 	<div id="manager" >
         <div class="h1">QUẢN LÝ LOẠI SẢN PHẨM </div>
+        <div class="h2" style="color: red; font-size: 13px">
+                Ngày <?echo date('d-m-Y')?>, <cite> CÔNG TY CỔ PHẦN THẾ GIỚI SỐ<br />
+                 </cite>
+            </div>
 		<div class="create-cat">
             <div class="content-manag">
                 <div class="create-new"><a href="quanly_loaisp.php?ac=new"> + Tạo mới loại sản phẩm</a></div>

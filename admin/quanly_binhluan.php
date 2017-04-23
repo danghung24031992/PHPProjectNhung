@@ -22,6 +22,10 @@
     <div class="main-page">
 	    <div id="manager" >
             <div class="h1">QUẢN LÝ BÌNH LUẬN SẢN PHẨM </div>
+             <div class="h2" style="color: red; font-size: 13px">
+                Ngày <?echo date('d-m-Y')?>, <cite> CÔNG TY CỔ PHẦN THẾ GIỚI SỐ<br />
+                 </cite>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="manager-info" style="width: 100%;">
                 <tr>
                     <th>Thứ tự</th>

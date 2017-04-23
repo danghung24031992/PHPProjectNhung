@@ -25,6 +25,10 @@ if($_GET['ac']=="tt"){
     <div class="main-page">
     	<div id="manager" >
             <div class="h1">QUẢN LÝ ĐƠN HÀNG </div>
+            <div class="h2" style="color: red; font-size: 13px">
+                Ngày <?echo date('d-m-Y')?>, <cite> CÔNG TY CỔ PHẦN THẾ GIỚI SỐ<br />
+                 </cite>
+            </div>
             <div class="manager-oder">
                  <table cellpadding="0" cellspacing="0" border="0" class="tbl-quanly-dathang">
                     <tr><td style="border: none; color: #07074F; font-weight: bold;text-transform: uppercase;">Thông tin đặt hàng</td></tr>

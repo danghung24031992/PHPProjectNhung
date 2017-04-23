@@ -179,6 +179,16 @@ function lay_ten_khach_hang($makh){
         return $r->tenKH;
     return "";
 }
+//thêm
+function lay_ten_khach_hang_all($email){
+    global $wpdb;
+    $r=$wpdb->get_row("SELECT tenKH FROM dt_thanhtoan WHERE email='$email'");
+    if($r)
+        return $r->tenKH;
+    return "";
+}
+//
+
 
 function lay_dien_thoai_khach_hang($makh){
     global $wpdb;
