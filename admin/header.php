@@ -51,6 +51,7 @@ Tag <fieldset> tạo đường bao ngoài bao quanh các thành phần trong <fo
                     <li><a href="quanly_donhang.php">Đơn hàng</a></li><span>|</span>
                     <li><a href="quanly_lienhe.php">Câu hỏi liên hệ</a></li><span>|</span>
                     <li><a href="quanly_binhluan.php">Bình luận</a></li><span>|</span>
+                    <li><a href="quanly_khachhang.php">Khách hàng</a></li><span>|</span>
                     <li><a href="../thoat.php">Thoát</a></li>
                 </ul>
             </div>
