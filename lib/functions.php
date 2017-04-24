@@ -354,25 +354,25 @@ function dat_hang(){
     return 0;
 }
 
-function tao_moi_khach_hang($hoten, $gioitinh, $cmnd, $email, $matkhau, $diachi, $dienthoai){
+function tao_moi_khach_hang($hoten, $gioitinh, $email, $matkhau, $diachi, $dienthoai){
     global $wpdb;
     $matkhau = md5($matkhau);
     $date=date('Y-m-d');
-    $sql="INSERT INTO dt_khachhang SET tenKH='$hoten', gioiTinh='$gioitinh', email='$email', cmnd='$cmnd', diaChi='$diachi', dienThoai='$dienthoai', matKhau='$matkhau', quyenTruyCap=0, ngayTao='$date'";
+    $sql="INSERT INTO dt_khachhang SET tenKH='$hoten', gioiTinh='$gioitinh', email='$email', diaChi='$diachi', dienThoai='$dienthoai', matKhau='$matkhau', quyenTruyCap=0, ngayTao='$date'";
     if($wpdb->query($sql))
         return 1;
     return 0;
     
 }
 
-function cap_nhat_khach_hang($hoten, $gioitinh, $cmnd, $email, $matkhau, $diachi, $dienthoai){
+function cap_nhat_khach_hang($hoten, $gioitinh, $email, $matkhau, $diachi, $dienthoai){
     global $wpdb;
     
     if($matkhau!=""){
         $matkhau = md5($matkhau);
-        $sql="UPDATE dt_khachhang SET tenKH='$hoten', gioiTinh='$gioitinh', email='$email', cmnd='$cmnd', diaChi='$diachi', dienThoai='$dienthoai', matKhau='$matkhau'";
+        $sql="UPDATE dt_khachhang SET tenKH='$hoten', gioiTinh='$gioitinh', email='$email', diaChi='$diachi', dienThoai='$dienthoai', matKhau='$matkhau'";
     }
-    else $sql="UPDATE dt_khachhang SET tenKH='$hoten', gioiTinh='$gioitinh', email='$email', cmnd='$cmnd', diaChi='$diachi', dienThoai='$dienthoai'";
+    else $sql="UPDATE dt_khachhang SET tenKH='$hoten', gioiTinh='$gioitinh', email='$email', diaChi='$diachi', dienThoai='$dienthoai'";
     
     return $wpdb->query($sql);
 }
