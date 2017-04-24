@@ -33,7 +33,7 @@ if($_GET['ac']=="tt"){
                  <table cellpadding="0" cellspacing="0" border="0" class="tbl-quanly-dathang">
                     <tr><td style="border: none; color: #07074F; font-weight: bold;text-transform: uppercase;">Thông tin đặt hàng</td></tr>
                     <?
-                    $tt=$wpdb->get_row("SELECT tenKH, gioiTinh, diaChi, dienThoai, email, cmnd FROM dt_khachhang as kh, dt_donhang as dh WHERE kh.email=dh.maKH AND dh.MaDH=$madh");
+                    $tt=$wpdb->get_row("SELECT tenKH, gioiTinh, diaChi, dienThoai, email FROM dt_khachhang as kh, dt_donhang as dh WHERE kh.email=dh.maKH AND dh.MaDH=$madh");
                     ?>
                     <tr>
                         <td class="lbl-dathang">Tên khách hàng</td>

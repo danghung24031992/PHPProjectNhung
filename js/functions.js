@@ -15,14 +15,14 @@ function setPaymentInfo(isChecked)
 			paymentName.value=shippName.value;
             paymentSex.value=shippSex.value;
             paymentAdd.value=shippAdd.value;
-            paymentCMND.value=shippCMND.value;
+            
             paymentEmail.value=shippEmail.value;
             paymentPhone.value=shippPhone.value;
             
             paymentName.readOnly  = true;
             paymentSex.readOnly  = true;
             paymentAdd.readOnly  = true;
-            paymentCMND.readOnly  = true;
+           
             paymentEmail.readOnly  = true;
             paymentPhone.readOnly  = true;
             			
@@ -30,7 +30,7 @@ function setPaymentInfo(isChecked)
 			paymentName.readOnly  = false;
             paymentSex.readOnly  = false;
             paymentAdd.readOnly  = false;
-            paymentCMND.readOnly  = false;
+            /*paymentCMND.readOnly  = false;*/
             paymentEmail.readOnly  = false;
             paymentPhone.readOnly  = false;	
 		}
