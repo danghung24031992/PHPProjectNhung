@@ -5,9 +5,7 @@
 
  require_once('lib/wp-db.php');
  require_once('lib/functions.php');
-
  require_once('header.php');
- //require_once('sidebar-left.php');
  
  
 ?>
@@ -27,35 +25,26 @@
 <!-- </div> -->
 
 
-<div id="maincolumn">
-  <div class="nopad">
-    <div class="khuyen_mai">
-        <?php 
-            $sanpham = $wpdb->get_results("SELECT * FROM dt_sanpham WHERE giacu > 0 ORDER BY ngayTao DESC LIMIT 0,8");
-            foreach($sanpham as $sp){
-                $img=$wpdb->get_row("SELECT anh FROM dt_hinhanhsp WHERE maSP=$sp->maSP AND kieuanh=1");
-                if($img->anh!="")
-                    $anh=$img->anh;
-                else $anh="khong_anh.jpg";
-        ?>
-            
-          <div class="shop-item" style="width: 300px; height: 300px" >
+<div id="maincolumn-page" style="text-align: center;">
+  <div class="nopad" style="display:inline-block; text-align: center; ">
+    <?php 
+    $sanpham = $wpdb->get_results("SELECT * FROM dt_sanpham WHERE giacu > 0 ORDER BY ngayTao DESC LIMIT 0,8");
+    foreach($sanpham as $sp){
+      $img=$wpdb->get_row("SELECT anh FROM dt_hinhanhsp WHERE maSP=$sp->maSP AND kieuanh=1");
+      if($img->anh!="")
+        $anh=$img->anh;
+      else $anh="khong_anh.jpg";
+      ?>
 
-                <a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP;?>"><img src="sanpham/<?php echo $anh;?>"/></a>
-                <h3><a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP;?>" style="font-size: 20px"><?php echo $sp->tenSanPham;?></a></h3>
-                <a href=""><img src="images/gia_soc.png"></a>
-                <!-- <h3><a href="chi_tiet_san_pham.php?id=<?php /*echo $sp->maSP;?>"><?php echo*/ $sp/*->*//*tenSanPham*/;?></a></h3>
-                <span class="price">Giá: <?php /*echo number_format*/($sp/*->giaBan*/);?> VNĐ</span>
-                <a href=""><img src="images/wa.png" style="margin-left: 80px"></a> -->
-          </div>
-            
-            <?php }
-            
-            echo '<div class="clear"></div></div>';
-            ?> 
-  </div>
-  </div>
-</div><!--end #maincolumn-->
-
+      <div class="shop-item" style="width: 300px; height: 300px" >
+        <a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP; ?>"><img src="sanpham/<?php echo $anh;?>"/></a>
+        <h3><a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP;?>" style="font-size: 20px"><?php echo $sp->tenSanPham;?></a></h3>
+        <a href=""><img src="images/gia_soc.png"></a>
+      </div>
+      <?php }
+      ?> 
+      <div class="clear"></div>
+    </div>
+    </div><!--end #maincolumn-->
 <? require_once('sidebar-right.php')?>
 <?require_once('footer.php')?>

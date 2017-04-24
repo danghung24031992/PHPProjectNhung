@@ -52,6 +52,7 @@
                             <td width="60%">
                                 <b style="color: red;"><?echo (kiem_tra_so_luong_san_pham($id))==true?"Còn hàng":"Hết hàng"?></b>
                             </td>
+                        
                         </tr>
                         <tr style="color: #ff8022">
                             <td style="font-size: 20px">Khuyến mại</td>

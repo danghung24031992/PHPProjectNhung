@@ -417,6 +417,7 @@
                             <th>Giá bán</th>
                             <th>Giá Chưa KM</th>
                             <th>Số Lượng</th>
+                           
                             <th>Sửa</th>
                             <th>Xóa</th>                        
                         </tr>

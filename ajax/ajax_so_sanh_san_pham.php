@@ -25,14 +25,7 @@ if(count($_SESSION['compare'])){
                         <tr><td>RAM</td></tr>
                         <tr><td>Bộ nhớ trong</td></tr>
                         
-                        <tr><td>Loại máy</td></tr>
-                        <tr><td>Zoom quang học</td></tr>
-                        <tr><td>Phân giải camera</td></tr>
-                        <tr><td>Cảm biến</td></tr>
-                        <tr><td>Độ nhạy sáng</td></tr>
-                        <tr><td>Tiêu cự</td></tr>
-                        <tr><td>Khẩu độ</td></tr>
-                        <tr><td>Hỗ trợ định dạng</td></tr>
+
                         
                      </table>
                  </div>

@@ -536,14 +536,6 @@ function thong_tin_san_pham_so_sanh($pid,$i){
           <tr><td><?=$r->cpu?>&nbsp;</td></tr>
           <tr><td><?=$r->ram?>&nbsp;</td></tr>
           <tr><td><?=$r->rom?>&nbsp;</td></tr>
-          <tr><td><?=$r->loaimay?></td>&nbsp;</tr>
-          <tr><td><?=$r->zoom?>&nbsp;</td></tr>
-          <tr><td><?=$r->phangiaicamera?>&nbsp;</td></tr>
-          <tr><td><?=$r->cambien?>&nbsp;</td></tr>
-          <tr><td><?=$r->donhaysang?>&nbsp;</td></tr>
-          <tr><td><?=$r->tieucu?>&nbsp;</td></tr>
-          <tr><td><?=$r->khaudo?>&nbsp;</td></tr>
-          <tr><td><?=$r->dinhdang?>&nbsp;</td></tr>
 
      </table>
 <?
