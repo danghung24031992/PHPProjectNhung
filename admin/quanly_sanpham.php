@@ -242,14 +242,6 @@
                             <div class="clr"></div>
                             
                         </div>
-                        
-                        
-                        
-                                    
-                                  
-                      
-                        
-                        
                         <h3>Tính năng thêm</h3>
                         <label>Thông tin thêm</label>
                         <textarea name="tinhnang" rows="7" cols="50"></textarea><div class="clr"></div>
@@ -417,7 +409,7 @@
                             <th>Giá bán</th>
                             <th>Giá Chưa KM</th>
                             <th>Số Lượng</th>
-                           
+                            <th>Số Lượng Đã Bán</th>
                             <th>Sửa</th>
                             <th>Xóa</th>                        
                         </tr>
@@ -426,6 +418,10 @@
                         $count=0;
                         foreach($row as $r){
                             $count+=1;
+                            $soLuongDaBan = 0;
+                            if (dem_so_luong_san_pham_ban($r->maSP)) {
+                                $soLuongDaBan = dem_so_luong_san_pham_ban($r->maSP);
+                            }
                         ?>
                         <tr style="background-color:  <?=($count%2==0)?'#EEEEEE':''?>;">
                             <td class="manager-id-field"><?=$count?></td>
@@ -435,6 +431,7 @@
                             <td><?=number_format($r->giaBan)?> VNĐ</td>
                             <td><?=number_format($r->giacu)?> VNĐ</td>
                             <td><?=$r->soLuong?></td>
+                            <td><?=$soLuongDaBan?></td>
                             <td class="manager-edit-field"><a href="quanly_sanpham.php?ac=edit&masp=<?=$r->maSP?>"><img src="images/edit.png" /></a></td>
                             <td class="manager-edit-field"><a href="quanly_sanpham.php?ac=del&masp=<?=$r->maSP?>" class="manag-del"><img src="images/delete.png" /></a></td>
                         </tr>

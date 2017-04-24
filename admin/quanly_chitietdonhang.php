@@ -16,7 +16,11 @@
 if($_GET['ac']=="tt"){
     $madh=$_GET['madh'];
     $wpdb->query("UPDATE dt_donhang SET trangThai=1 WHERE maDH=$madh");
-    
+    //Update lai so luong
+    $r = $wpdb->get_row("SELECT * FROM dt_chitietdonhang WHERE maDonHang='$madh'");
+    if ($r) {
+        $wpdb->query("UPDATE dt_sanpham SET soLuong = soLuong - $r->soLuong WHERE maSP='$r->maSP'");
+    }
 }
 
 ?>

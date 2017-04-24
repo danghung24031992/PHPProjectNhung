@@ -287,5 +287,10 @@ function lay_ten_san_pham($maSP){
         return $r->tenSanPham;
     return "";
 }
-
+//thêm
+function dem_so_luong_san_pham_ban($pid){
+    global $wpdb;
+    $r=$wpdb->get_row("SELECT sum(soLuong) as soLuong FROM dt_chitietdonhang WHERE maSP=$pid");
+    return $r->soLuong;
+}
 ?>

@@ -135,7 +135,11 @@
       $.ajax({
         url: 'ajax/ajax_add_shoppingcart.php?pid='+ pid +'&so_luong=' + soLuong,
         success: function(data) {
-          $('#shoppingcart-header').html(data);
+            if (soLuong > 0) {
+                $('#shoppingcart-header').html(data);
+            }else{
+                alert("Sản phẩm đã hết hàng.");
+            }
       }
   });    
   });/*end click event add to shoppingcart*/
