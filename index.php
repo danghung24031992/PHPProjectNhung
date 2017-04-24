@@ -52,8 +52,20 @@ session_start();
             
             <div class="shop-item" >
 
+            
                 <a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP;?>"><img src="sanpham/<?php echo $anh;?>" /></a>
                 <h3><a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP;?>"><?php echo $sp->tenSanPham;?></a></h3>
+                <span class="price" style="color: black">
+                <strike>
+                <i>
+                <?php 
+                    if ($sp->giacu >0) {
+                    echo number_format($sp->giacu);
+                }
+                ?> 
+                </i>
+                </strike>
+                </span>
                 <span class="price">Giá: <?php echo number_format($sp->giaBan);?> VNĐ</span>
                 <a href=""><img src="images/wa.png" style="margin-left: 80px"></a>
             </div>
