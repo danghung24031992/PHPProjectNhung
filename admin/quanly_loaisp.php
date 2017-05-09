@@ -88,7 +88,7 @@
                 <table>
                     <tr><td class="count-table" style="font-size: 16px;">CÓ  <font color="#B00000"><?=count_loaiSP()?></font> LOẠI SẢN PHẨM</td></tr>
                 </table>
-                <table cellpadding="0" cellspacing="0" border="0" width="76%" class="manager-info">
+                <table cellpadding="0" cellspacing="0" border="0" width="76%" class="manager-info" style="margin: auto;">
                     <tr>
                         <th>TT</th>
                         <th>Loại sản phẩm</th>

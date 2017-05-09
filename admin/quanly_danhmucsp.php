@@ -89,7 +89,7 @@
                 <table>
                     <tr><td class="count-table">Có tổng cộng <font color="#B00000"><?=count_danh_muc_sp()?></font> DANH MỤC SẢN PHẨM</td></tr>
                 </table>
-                <table cellpadding="0" cellspacing="0" border="0" width="76%" class="manager-info">
+                <table cellpadding="0" cellspacing="0" border="0" width="76%" class="manager-info" style="margin: auto;">
                     <tr>
                         <th>TT</th>
                         <th>Tên danh mục</th>

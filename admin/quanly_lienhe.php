@@ -26,7 +26,7 @@
                 Ngày <?echo date('d-m-Y')?>, <cite> CÔNG TY CỔ PHẦN THẾ GIỚI SỐ<br />
                  </cite>
             </div>
-            <table cellpadding="0" cellspacing="0" border="0" class="manager-info">
+            <table cellpadding="0" cellspacing="0" border="0" class="manager-info" style="margin: auto;">
                 <tr>
                     <th>Thứ tự</th>
                     <th>Chủ đề</th>
@@ -34,6 +34,7 @@
                     <th> Số điện thoại</th>
                     <th> Email</th>
                     <th>Trả lời</th>
+                   <!--  <th>Câu trả lời</th> -->
                     <th>Xóa</th>
                 </tr>
                 <?
@@ -43,11 +44,12 @@
                 ?>
                 <tr>
                     <td style="text-align: center"><?=$c?></td>
-                    <td><?=$r->phone?></td>
                     <td><?=$r->tieuDe?></td>
                     <td><?=$r->noiDung?></td>
+                    <td><?=$r->phone?></td>
                     <td><?=$r->email?></td>
                     <td><a href="quanly_traloi.php?qid=<?=$r->id?>">Trả lời</a></td>
+                    <!-- <td><?=$r->traLoi?></td> -->
                     <td><a href="quanly_lienhe.php?ac=del&qid=<?=$r->id?>"><img src="images/delete.png" /></a></td>
                 </tr>
                 <?

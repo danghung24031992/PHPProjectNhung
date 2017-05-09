@@ -19,7 +19,7 @@
     ($_GET['ac'])?$ac=$_GET['ac']:$ac='';
     
     $mssg='';
-    $msg=array(1=>'Message: Thêm sản phẩm thành công',
+    $msg=array(1=>'Bạn đã Thêm sản phẩm thành công',
                 2=>'Error: Thêm sản phẩm không thành công',
                 3=>'Cập nhật sản phẩm thành công',
                 4=>'Cập nhật sản phẩm không thành công',
@@ -33,7 +33,7 @@
         $gianhap=$_POST['gianhap'];
         $giaban=$_POST['giaban'];
         $soluong=$_POST['soluong'];
-        $tinhnang=$_POST['tinhnang'];
+        $quaTang=$_POST['quaTang'];
         $ngaySX=$_POST['ngaysx'];
         
         $loaimanhinh=$_POST['loaimanhinh'];
@@ -56,7 +56,7 @@
         
         
         if($ac=='new'){
-            $masp=them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $tinhnang,
+            $masp=them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
                                 $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                 $cpu,$ram,$rom,$moi,$giacu);
 
@@ -73,7 +73,7 @@
 
         } else if($ac=='edit' && $masp!=''){
                
-                if(cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $tinhnang,
+                if(cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
                                 $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                 $cpu,$ram,$rom,$moi,$giacu)){
                     $mssg=$msg[3];
@@ -242,9 +242,9 @@
                             <div class="clr"></div>
                             
                         </div>
-                        <h3>Tính năng thêm</h3>
-                        <label>Thông tin thêm</label>
-                        <textarea name="tinhnang" rows="7" cols="50"></textarea><div class="clr"></div>
+                        <h3>Thông tin thêm</h3>
+                        <label>Quà Tặng</label>
+                        <textarea name="quaTang" rows="7" cols="50"></textarea><div class="clr"></div>
                        
                         <input type="submit" value="Thêm sản phẩm" class="btn_submit" />
                     </form>
@@ -385,8 +385,8 @@
                         
                         
                         <h3>Tính năng thêm</h3>
-                        <label>Thông tin thêm</label>
-                        <textarea name="tinhnang" rows="7" cols="50"><?=$r->tinhNang?></textarea><div class="clr"></div>
+                        <label>Quà Tặng</label>
+                        <textarea name="quaTang" rows="7" cols="50"><?=$r->quaTang?></textarea><div class="clr"></div>
                            
                             
                         </div>
@@ -400,7 +400,7 @@
                     <table>
                         <tr><td class="count-table">CÓ <font color="#B00000"><?=count_san_pham()?></font> SẢN PHẨM</td></tr>
                     </table>
-                    <table cellpadding="0" cellspacing="0" border="0" width="90%" class="manager-info">
+                    <table cellpadding="0" cellspacing="0" border="0" width="90%" class="manager-info" style="margin: auto;">
                         <tr>
                             <th>TT</th>
                             <th>Tên sản phẩm</th>

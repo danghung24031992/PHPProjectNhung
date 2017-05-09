@@ -126,7 +126,7 @@
                         <option value="2000000">Dưới 2 triệu</option>
                         <option value="5000000">Dưới 5 triệu</option>
                         <option value="10000000">Dưới 10 triệu</option>
-                        <option value="100000001">Trên 10 triệu</option>
+                        <option value="10000001">Trên 10 triệu</option>
                     </select>
                     
                     <input class="btn-search-compare" type="button" value="Tìm kiếm" id="search_compare_product" />

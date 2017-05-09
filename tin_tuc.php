@@ -85,7 +85,7 @@ Thay vào đó, Công ty sẽ tập trung vào 5 mục tiêu lớn:</span></p>
 <p style="margin: 6pt 0in; line-height: 150%; text-align: justify;"><span style="line-height: 150%; font-family: tahoma; font-size: 13px;">- <strong>Cam kết</strong>&nbsp;với nội bộ và cộng đồng, xã hội;</span></p>
 <p style="margin: 6pt 0in; line-height: 150%; text-align: justify;"><span style="line-height: 150%; font-family: tahoma; font-size: 13px;">- Làm việc và hành động <strong>trung thực</strong>;</span></p>
 <p style="margin: 6pt 0in; line-height: 150%; text-align: justify;"><span style="line-height: 150%; font-family: tahoma; font-size: 13px;">-&nbsp;Hoạt động <strong>hiệu quả</strong> hướng tới<strong> </strong>hiệu quả doanh nghiệp và xã hội.</span></p>
-<p style="margin: 6pt 0in; line-height: 150%; text-align: center;"><span style="line-height: 150%; font-family: tahoma; font-size: 13px;"><img alt="" src="https://img.trananh.com.vn/trananh/2015/10/07/CAU_THANG-02.png" style="width: 679px; height: 352px; vertical-align: top; margin: 0px; border-width: 0px; border-style: solid;"> <br>
+<p style="margin: 6pt 0in; line-height: 150%; text-align: center;"><span style="line-height: 150%; font-family: tahoma; font-size: 13px;"><img alt="" src="images/CAU_THANG-02.png" style="width: 679px; height: 352px; vertical-align: top; margin: 0px; border-width: 0px; border-style: solid;"> <br>
 </span></p>
 
 <br>

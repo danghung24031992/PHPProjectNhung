@@ -68,7 +68,7 @@ if($_GET['ac']=="tt"){
                         <td><?=number_format(tong_tien_don_hang($madh))?> VNĐ</td>
                     </tr>
                     <tr>
-                        <td>Thanh toán</td>
+                        <td class="lbl-dathang">Thanh toán</td>
                         <td class="is-thanh-toan"><?=(da_thanh_toan($madh)==true)?"Đã thanh toán":"<a href='quanly_chitietdonhang.php?ac=tt&madh=$madh' class='thanh-toan-dh'>Thanh toán</a>"?></td>
                     </tr>
                  </table>

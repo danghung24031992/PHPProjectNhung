@@ -81,7 +81,7 @@ if($_POST){
                     <tr>
 
                         <td><label>Nội dung</label></td>
-                        <td><textarea name="content" rows="7" cols="65"></textarea></td>
+                        <td><textarea name="content" rows="7" cols="65"></textarea>  </td>
 
                     </tr>
 

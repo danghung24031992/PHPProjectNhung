@@ -26,7 +26,7 @@
                 Ngày <?echo date('d-m-Y')?>, <cite> CÔNG TY CỔ PHẦN THẾ GIỚI SỐ<br />
                  </cite>
             </div>
-            <table cellpadding="0" cellspacing="0" border="0" class="manager-info">
+            <table cellpadding="0" cellspacing="0" border="0" class="manager-info" style="margin: auto;">
                 <tr>
                     <th>Thứ tự</th>
                     <th>Tên khách hàng</th>

@@ -67,7 +67,7 @@ if($_POST){
 </script>
 
 <div id="maincolumn-page" style="float: none;width: auto;">
-	<div class="nopad">
+	<div class="nopad" style="margin-top: 80px">
         <div class="login-form">
             <form method="POST" name="dang_nhap" id="dang_nhap">
                 <div class="login-title">ĐĂNG NHẬP</div>

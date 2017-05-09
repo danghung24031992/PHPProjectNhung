@@ -59,7 +59,7 @@ function danh_sach_san_pham($ac,$loai,$id){
         $danhmuc=$wpdb->get_results("SELECT * FROM dt_sanpham WHERE maLoai=$loai AND maDM=$id");
         if(count($danhmuc)){
         ?>
-            <div class="title-page-item"><?=lay_ten_loai_sp($loai)?> > <?=lay_ten_danh_muc($id)?></div>
+            <div class="title-page-item"><?=lay_ten_loai_sp($loai)?> -> <?=lay_ten_danh_muc($id)?></div>
         <?
             foreach($danhmuc as $dm){
                 $img=$wpdb->get_row("SELECT anh FROM dt_hinhanhsp WHERE maSP=$dm->maSP AND kieuanh=1");
@@ -68,9 +68,10 @@ function danh_sach_san_pham($ac,$loai,$id){
                 else $anh="khong_anh.jpg";
             ?>
             <div class="shop-item">
-                <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
+                <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?php echo $anh; ?>" /></a>
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
                 <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                
             </div>    
             
             <?
@@ -397,7 +398,7 @@ function login_info_header($uid){
     $sql="SELECT tenKH FROM dt_khachhang WHERE email='$uid'";
     $r=$wpdb->get_row($sql);
     if($r)
-        return "Xin chào <b>".$r->tenKH."</b> | <a href='thoat.php' class='link-logout'>Thoát</a>";
+        return "Xin Chào <b>".$r->tenKH."</b> | <a href='thoat.php' class='link-logout'>Đăng Xuất</a>";
     return "";
 }
 
@@ -663,10 +664,11 @@ function tong_tien_don_hang($madh){
 }
 
 function debugLog($debugStr){
-    echo $debugStr; die();
-    // echo '<script language="javascript">';
-    // echo 'alert(".$debugStr.")';
-    // echo '</script>';
+    //echo $debugStr; die();
+    echo '<script language="javascript">';
+    echo 'alert(".$debugStr.")';
+    echo '</script>';
+    die();
 }
 
 ?>

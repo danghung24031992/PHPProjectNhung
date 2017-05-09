@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                     <td>Trả lời</td>
-                    <td><textarea name="answer" rows="7" cols="50"></textarea></td>
+                    <td><textarea name="answer" rows="7" cols="50"><?=$r->traLoi?></textarea></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>

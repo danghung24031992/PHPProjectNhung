@@ -8,10 +8,6 @@
  */
  
 /* The Nivo Slider styles */
-
-
-
-
 .nivoSlider {
 	position:relative;
 	width:100%;
@@ -77,7 +73,7 @@
 	display: none;
 	-moz-opacity: 0.8;
 	filter:alpha(opacity=8);
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit 
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 }
@@ -91,7 +87,7 @@
 .nivo-html-caption {
     display:none;
 }
- Direction nav styles (e.g. Next & Prev) 
+/* Direction nav styles (e.g. Next & Prev) */
 .nivo-directionNav a {
 	position:absolute;
 	top:45%;

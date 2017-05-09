@@ -14,7 +14,9 @@
         
         <div id="content">
             <div class="main-page">
+
                 <div class="box-admin" style="width: 350px;">
+
                     <div class="title-box-admin" >Thống kê </div>
                     <div class="main-box-admin">
                         <div class="thong-ke" style="font-size: 20px; margin-top: 10px">
@@ -68,7 +70,7 @@
                         
                     </div>
                 </div>
-                <div class="box-admin" style="width: 480px; height: 500px" >
+                <div class="box-admin" style="width: 480px; height: 400px" >
                     <div class="title-box-admin">Đơn hàng mới đặt</div>
                     <div class="main-box-admin">
                         <div class="thong-ke">

@@ -19,14 +19,14 @@ session_start();
     <div class="right-slide">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <!-- <img src="images/slide-1.png" alt="" /> -->
-               <!--  <img src="images/anh4.png" alt="" /> -->
+                <!-- <img src="images/slide-1.png" alt="" />
+                <img src="images/slide-2.png" alt="" />
                 <img src="images/slide.png" alt="" />
-                <!-- <img src="images/slide-4.png" alt="" /> -->
+                <img src="images/slide-3.png" alt="" />
+                <img src="images/slide-4.png" alt="" /> -->
             </div>
             
         </div>
-        
     </div>
     <div class="clr"></div>
    
@@ -59,15 +59,21 @@ session_start();
                 <strike>
                 <i>
                 <?php 
-                    if ($sp->giacu >0) {
-                    echo number_format($sp->giacu);
+                    if ($sp->giacu >0) { echo "Giá cũ: ";
+                    echo  number_format($sp->giacu);
                 }
                 ?> 
                 </i>
                 </strike>
                 </span>
                 <span class="price">Giá: <?php echo number_format($sp->giaBan);?> VNĐ</span>
-                <a href=""><img src="images/wa.png" style="margin-left: 80px"></a>
+                <a href=""><!-- <img src="images/wa.png" style="margin-left: 80px"> --></a>
+               <span style="color: #02887b">
+                   <?php
+                   if($sp->quaTang!="") {echo "+ Quà tặng "; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                  
+                    ?>
+               </span>
             </div>
             
             <?php }

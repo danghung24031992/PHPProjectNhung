@@ -27,14 +27,14 @@ function xoa_loaiSP($ma){
     $wpdb->query("DELETE FROM dt_loaisanpham WHERE maLoaiSP=$ma");
 }
 
-function them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $tinhnang,
+function them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
                                 $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                $cpu,$ram,$rom,$moi,$giacu){
     global $wpdb;
     $ngaytao=date('Y-m-d');
     
     
-    $wpdb->query("INSERT INTO dt_sanpham SET tenSanPham='$tensp', maDM='$madm', maLoai='$maloai', giaNhap='$gianhap', giaBan='$giaban', soLuong='$soluong', tinhNang='$tinhnang', ngayTao='$ngaytao',
+    $wpdb->query("INSERT INTO dt_sanpham SET tenSanPham='$tensp', maDM='$madm', maLoai='$maloai', giaNhap='$gianhap', giaBan='$giaban', soLuong='$soluong', quaTang='$quaTang', ngayTao='$ngaytao',
         loaiManHinh='$loaimanhinh', doPhanGiai='$dophangiai', kichThuot='$kichthuoc',
         camUng='$camung', heDieuHanh='$hedieuhanh', kieuDang='$kieudang', trongLuong='$trongluong', baoHanh='$baohanh', ngaySX='$ngaySX', nguoiTao='$user',
         cpu='$cpu', ram='$ram', rom='$rom',moi='$moi',giacu='$giacu'");
@@ -57,7 +57,7 @@ function ten_danh_muc_san_pham($madm){
     $r=$wpdb->get_row("SELECT tenDanhMuc FROM dt_danhmucsp WHERE maDanhMuc=$madm");
     return $r->tenDanhMuc; 
 }
-function cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $tinhnang,
+function cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
                                 $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                 $cpu,$ram,$rom,$moi,$giacu){
     global $wpdb;
@@ -74,8 +74,8 @@ function cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $sol
         $sql.=" ,giaBan=".$giaban;
     if($ngaySX!='')
         $sql.=", ngaySX='".$ngaySX."'";
-    if($tinhnang!='')
-        $sql.=", tinhNang='".$tinhnang."'";
+    if($quaTang!='')
+        $sql.=", quaTang='".$quaTang."'";
     $sql.=" , soLuong='$soluong',loaiManHinh='$loaimanhinh',
     doPhanGiai='$dophangiai',kichThuot='$kichthuoc',camUng='$camung',
     heDieuHanh='$hedieuhanh',kieuDang='$kieudang',trongLuong='$trongluong',baoHanh='$baohanh', ngaySX='$ngaySX',

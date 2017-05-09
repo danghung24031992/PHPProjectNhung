@@ -96,14 +96,15 @@ session_start();
           <a href="index.php"><img src="images/dw-logo.png" /> </a>
         </div>
       <!--   /* Tạo youtube, facebook, google*/ -->
+
         <div class="fb-logo">
-              <a href="https://plus.google.com/u/0/"><img src="images/google+.png" style="margin-top: 35px ; margin-left: 10px;" /> </a>
+              <a href="https://plus.google.com/u/0/"><img src="images/gm1.jpg" style="margin-top: 25px ; margin-left: 60px;" /> </a>
         </div>
         <div class="fb-logo"> 
-              <a href="https://www.facebook.com/profile.php?id=100007975801038"><img src="images/fb.png" style="margin-top: 35px ; margin-left: 10px;" /> </a>
+              <a href="https://www.facebook.com/profile.php?id=100007975801038"><img src="images/fb1.png" style="margin-top: 25px ; margin-left: 60px;" /> </a>
         </div>
         <div class="fb-logo"> 
-              <a href="https://www.youtube.com/"><img src="images/youtube.png" style="margin-top: 35px ; margin-left: 10px;" /> </a>
+              <a href="https://www.youtube.com/"><img src="images/yb1.png" style="margin-top: 25px ; margin-left: 60px;" /> </a>
         </div>
         <div class="right-logo">
           <div id="menu-search">

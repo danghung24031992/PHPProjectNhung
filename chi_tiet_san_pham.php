@@ -55,8 +55,8 @@
                         
                         </tr>
                         <tr style="color: #ff8022">
-                            <td style="font-size: 20px">Khuyến mại</td>
-                            <td width="60%"><b><?=$r->tinhNang?></b></td>
+                            <td style="font-size: 20px">Quà tặng</td>
+                            <td width="60%"><b><?=$r->quaTang?></b></td>
                         </tr>
                         
                     </table>
