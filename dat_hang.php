@@ -36,7 +36,7 @@
         
 
         $date=date('Y-m-d');
-        $makh=$_SESSION['user'];
+        $makh=$email;//$_SESSION['user'];
         
         if(count($_SESSION['shoppingcart'])){
             $r=$wpdb->query("INSERT INTO dt_donhang SET maKH='$makh', ngayDatHang='$date', trangThai=0, hinhThucTT='$hinhthuc_tt'");

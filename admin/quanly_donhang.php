@@ -53,7 +53,7 @@ if(($_GET['ac']=="del") && ($_GET['madh']!="")){
                         <th>Xóa</th>
                     </tr>
                     <?
-                    $dh=$wpdb->get_results("SELECT maDH, maKH, ngayDatHang, trangThai  FROM dt_donhang");
+                    $dh=$wpdb->get_results("SELECT maDH , maKH, ngayDatHang, trangThai  FROM dt_donhang");
                     foreach($dh as $d){
                         $madh=$d->maDH;
                         $makh=$d->maKH;
@@ -62,13 +62,18 @@ if(($_GET['ac']=="del") && ($_GET['madh']!="")){
                         if ($ct->soluong != 0) {
                             $soLuong = $ct->soluong;
                         }
+
+                        $tt=$wpdb->get_row("SELECT tenKH ,email , dienThoai  FROM dt_thanhtoan WHERE maHoaDon=$madh");
+                        $tenKH=$tt->tenKH;
+                        $dienThoai=$tt->dienThoai;
+                        $email = $tt->email;
                     ?>
                     <tr>
                         <td style="text-align: center"><?=$d->maDH?></td>
-                        <td><?=lay_ten_khach_hang($makh)?></td>
+                        <td><?=$tenKH?></td>
                         <!-- <td><?=/*lay_ten_khach_hang_all*/($email)?></td> -->
-                        <td><?=$makh?></td>
-                        <td><?=lay_dien_thoai_khach_hang($makh)?></td>
+                        <td><?=$email?></td>
+                        <td><?=$dienThoai?></td>
                         <td><?=$d->ngayDatHang?></td>
                         <td style="text-align: center"><?=$soLuong?></td>
                         <td><?=number_format(tong_tien_don_hang($madh))?> VNĐ</td>

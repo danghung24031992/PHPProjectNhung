@@ -384,10 +384,13 @@ function dang_nhap($uid, $pas){
     $pas = md5($pas);                  
     $r=$wpdb->get_row("SELECT email, matKhau, quyenTruyCap FROM dt_khachhang WHERE email='$uid' AND matKhau='$pas'");
     if($r){
-        if($r->quyenTruyCap==1)
+        if($r->quyenTruyCap==1)//admin
             $role=1;
-        else 
+        else if ($r->quyenTruyCap== 0) { // user
             $role=0;
+        }else{ // khách mua hàng k có wuyen đăng nhập.
+
+        }
     }
     return $role;
 }

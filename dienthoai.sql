@@ -381,7 +381,7 @@ CREATE TABLE `dt_sanpham` (
   `giaBan` double NOT NULL,
   `soLuong` int(11) NOT NULL,
   `ngaySX` date DEFAULT NULL,
-  `tinhNang` text NOT NULL,
+  `quaTang` text NOT NULL,
   `loaiManHinh` text,
   `doPhanGiai` varchar(255) DEFAULT NULL,
   `kichThuot` varchar(255) DEFAULT NULL,
@@ -409,7 +409,7 @@ CREATE TABLE `dt_sanpham` (
 -- Dumping data for table `dt_sanpham`
 --
 
-INSERT INTO `dt_sanpham` (`maSP`, `tenSanPham`, `maDM`, `maLoai`, `giaNhap`, `giaBan`, `soLuong`, `ngaySX`, `tinhNang`, `loaiManHinh`, `doPhanGiai`, `kichThuot`, `camUng`, `heDieuHanh`, `kieuDang`, `trongLuong`, `baoHanh`, `ngayTao`, `nguoiTao`, `loaimay`, `zoom`, `phangiaicamera`, `cambien`, `donhaysang`, `tieucu`, `khaudo`, `dinhdang`, `cpu`, `ram`, `rom`) VALUES
+INSERT INTO `dt_sanpham` (`maSP`, `tenSanPham`, `maDM`, `maLoai`, `giaNhap`, `giaBan`, `soLuong`, `ngaySX`, `quaTang`, `loaiManHinh`, `doPhanGiai`, `kichThuot`, `camUng`, `heDieuHanh`, `kieuDang`, `trongLuong`, `baoHanh`, `ngayTao`, `nguoiTao`, `loaimay`, `zoom`, `phangiaicamera`, `cambien`, `donhaysang`, `tieucu`, `khaudo`, `dinhdang`, `cpu`, `ram`, `rom`) VALUES
 (151, 'Sony Vaio Fit SVF1421DSG', 40, '6', 16700000, 18900000, 50, '2013-12-02', 'PIN/Battery: VGP-BPS35A', 'HD', '1366 x 768 pixels', '14 inch, HD', 'KhÃ´ng', 'Windows 8 Single Language,64-bit', 'Thanh (Tháº³ng)', '2200', '24', '2013-12-07', 'admin@gmail.com', '', '', '', '', '', '', '', '', 'Intel, Core i3, 3217U, 1.80 GHz', 'DDR3 (2 khe RAM), 2 GB', 'HDD, 500 GB'),
 (129, 'iPhone 4 8GB', 37, '4', 16900000, 18900000, 50, '2013-11-02', 'Dung lÆ°á»£ng pin: 1420 mAh', 'DVGA, 3.5', '', '', 'CÃ³', 'iOS 7.0', 'Thanh (Tháº³ng)', '', '36', '2013-11-27', 'admin@gmail.com', '', '', '', '', '', '', '', '', 'Solo-core 1 GHz', '', ''),
 (150, 'Sony Vaio Fit SVF1421ESG', 40, '6', 16700000, 19700000, 50, '2013-12-01', 'PIN/Battery: VGP-BPS35A', 'LED', '', '14.0"', 'KhÃ´ng', 'Window 8 SL, 64Bit', 'Thanh (Tháº³ng)', '2.20', '24', '2013-12-07', 'admin@gmail.com', '', '', '', '', '', '', '', '', 'Intel, Pentium, 987, 1.50 GHz', '2GB', '500GB'),
