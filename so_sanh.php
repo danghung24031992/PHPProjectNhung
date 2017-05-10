@@ -23,6 +23,7 @@
               url: 'ajax/ajax_tim_san_pham_so_sanh.php?loai='+ loai + '&catid='+ pid + '&price='+ price,
               success: function(data) {
                 $('#show_product_compare').html(data);
+                $('#show_product_compare').attr('style','display:block');
               }
             }); 
        }); 
@@ -40,7 +41,7 @@
               url: 'ajax/ajax_chon_san_pham_so_sanh.php?ac=del',
               
               success: function(data) {
-                    $('#selected-compare').html(data);
+                    $('#selected-compare').html("");
                     $('.compare-result').html("");
               }
             });

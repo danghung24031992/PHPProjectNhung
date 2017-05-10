@@ -61,6 +61,7 @@ session_start();
                 <?php 
                     if ($sp->giacu >0) { echo "Giá cũ: ";
                     echo  number_format($sp->giacu);
+                    echo "VNĐ";
                 }
                 ?> 
                 </i>
@@ -70,7 +71,7 @@ session_start();
                 <a href=""><!-- <img src="images/wa.png" style="margin-left: 80px"> --></a>
                <span style="color: #02887b">
                    <?php
-                   if($sp->quaTang!="") {echo "+ Quà tặng "; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                   if($sp->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
                   
                     ?>
                </span>

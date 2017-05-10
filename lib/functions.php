@@ -70,7 +70,25 @@ function danh_sach_san_pham($ac,$loai,$id){
             <div class="shop-item">
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?php echo $anh; ?>" /></a>
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
+                 <span class="price" style="color: black">
+                <strike>
+                <i>
+                <?php 
+                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                    echo  number_format($dm->giacu);
+                    echo "VNĐ";
+                }
+                ?> 
+                </i>
+                </strike>
+                </span>
                 <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                 <span style="color: #02887b">
+                   <?php
+                   if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                  
+                    ?>
+               </span>
                 
             </div>    
             
@@ -109,7 +127,25 @@ function danh_sach_san_pham($ac,$loai,$id){
             <div class="shop-item">
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
+                 <span class="price" style="color: black">
+                <strike>
+                <i>
+                <?php 
+                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                    echo  number_format($dm->giacu);
+                    echo "VNĐ";
+                }
+                ?> 
+                </i>
+                </strike>
+                </span>
                 <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                 <span style="color: #02887b">
+                   <?php
+                   if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                  
+                    ?>
+               </span>
             </div>    
             
             <?
@@ -176,7 +212,25 @@ function tim_kiem_san_pham($loai, $hang, $tugia, $dengia){
             <div class="shop-item">
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
+                <span class="price" style="color: black">
+                <strike>
+                <i>
+                <?php 
+                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                    echo  number_format($dm->giacu);
+                    echo "VNĐ";
+                }
+                ?> 
+                </i>
+                </strike>
+                </span>
                 <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                <span style="color: #02887b">
+                   <?php
+                   if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                  
+                    ?>
+               </span>
             </div>    
             
             <?
@@ -496,6 +550,15 @@ function san_pham_so_sanh($loaiID,$catID,$price){
     <div class="shop-item">
         <a href="chi_tiet_san_pham.php?id=<?=$n->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
         <h3><a href="chi_tiet_san_pham.php?id=<?=$n->maSP?>"><?=$n->tenSanPham?></a></h3>
+        
+         <span class="price">Giá: <?php echo number_format($n->giaBan);?> VNĐ</span>
+          <span style="color: #02887b">
+                   <?php
+                   if($n->quaTang!="") {echo "<img src='images/wa_3.png' style='margin:auto'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                  
+                    ?>
+               </span>
+
         <span><a href="#" class="add_to_compare" id="<?=$n->maSP ?>">Thêm vào</a></span>
     </div>
     
