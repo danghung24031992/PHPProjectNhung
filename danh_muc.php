@@ -76,10 +76,27 @@
                         $anh=$img->anh;
                     else $anh="khong_anh.jpg";
             ?>
-                <div class="shop-item">
+                <div class="shop-item" style="position: relative;" >
                     <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
                     <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
+                    <span class="price" style="color: black">
+                        <strike>
+                            <i>
+                                <?php 
+                                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                                    echo  number_format($dm->giacu);
+                                    echo "VNĐ";
+                                }
+                                ?> 
+                            </i>
+                        </strike>
+                    </span>
                     <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                    <span style="color: #02887b ; position: absolute; bottom: 0;  text-align:center; width: 100%;">
+                    <?php
+                        if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'/>" ; }
+                    ?>
+                    </span>
                 </div>    
                 
                 <?

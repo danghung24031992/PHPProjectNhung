@@ -19,11 +19,10 @@ session_start();
     <div class="right-slide">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <!-- <img src="images/slide-1.png" alt="" />
+                <img src="images/slide-1.png" alt="" />
                 <img src="images/slide-2.png" alt="" />
                 <img src="images/slide.png" alt="" />
                 <img src="images/slide-3.png" alt="" />
-                <img src="images/slide-4.png" alt="" /> -->
             </div>
             
         </div>
@@ -50,7 +49,7 @@ session_start();
                 else $anh="khong_anh.jpg";
             ?>
             
-            <div class="shop-item" >
+            <div class="shop-item" style="position: relative;" >
 
             
                 <a href="chi_tiet_san_pham.php?id=<?php echo $sp->maSP;?>"><img src="sanpham/<?php echo $anh;?>" /></a>
@@ -69,7 +68,7 @@ session_start();
                 </span>
                 <span class="price">Giá: <?php echo number_format($sp->giaBan);?> VNĐ</span>
                 <a href=""><!-- <img src="images/wa.png" style="margin-left: 80px"> --></a>
-               <span style="color: #02887b">
+               <span style="color: #02887b ;position: absolute; bottom: 0;  text-align:center; width: 100%;">
                    <?php
                    if($sp->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
                   

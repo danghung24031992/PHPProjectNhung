@@ -67,7 +67,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                     $anh=$img->anh;
                 else $anh="khong_anh.jpg";
             ?>
-            <div class="shop-item">
+            <div class="shop-item" style="position: relative;">
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?php echo $anh; ?>" /></a>
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
                  <span class="price" style="color: black">
@@ -83,10 +83,9 @@ function danh_sach_san_pham($ac,$loai,$id){
                 </strike>
                 </span>
                 <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
-                 <span style="color: #02887b">
+                 <span style="color: #02887b ;position: absolute; bottom: 0;  text-align:center; width: 100%;">
                    <?php
                    if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
-                  
                     ?>
                </span>
                 
@@ -124,7 +123,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                     $anh=$img->anh;
                 else $anh="khong_anh.jpg";
             ?>
-            <div class="shop-item">
+            <div class="shop-item"  style="position: relative;">
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
                 <a href="chi_tiet_san_pham.php?id=<?=$dm->maSP?>"><h3><?=$dm->tenSanPham?></h3></a>
                  <span class="price" style="color: black">
@@ -140,7 +139,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                 </strike>
                 </span>
                 <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
-                 <span style="color: #02887b">
+                 <span style="color: #02887b ;position: absolute; bottom: 0;  text-align:center; width: 100%;">
                    <?php
                    if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
                   
