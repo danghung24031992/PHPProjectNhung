@@ -34,13 +34,23 @@
                                 <a href="tel:19006026" style="font-size: 18px;color: red ;">1900 6026</a>
                                 (7h30-21h30)
                                 </h2>
+                                <!--  <h2 style="font-size: 14px;color: #f6faf6; margin-left: 15px"> 
+                                Email liên hệ:
+                                <a href="Email:thegioiso@gmail.com" style="font-size: 18px;color: red ;">thegioiso@gmail.com</a>
+                                </h2> -->
                             </div>
                             <div>
                                 <h2 style="font-size: 20px; color:red; margin-top: -50px;margin-left: -20px">Công ty cổ phần Thế Giới Số </h2></br>
                                  <h3 style=" margin-top: -20px;margin-left: -20px">31- Phan Đình Giót, Quận Thanh Xuân, Thành phố Hà Nội</h3>
+                                  <h2 style="font-size: 12px;color: #f6faf6; margin-left: 15px"> 
+                                Email:
+                                <a href="Email:thegioiso@gmail.com" style="font-size: 13px;color: red ;">thegioiso@gmail.com</a>
+                                </h2>
                             </div>
-                        
-                        
+                       <!--  <div>
+                            <a href=""><img src="images/footer1.png"> </a>
+                        </div>
+                         -->
       
         
          <div class="clr"></div>    

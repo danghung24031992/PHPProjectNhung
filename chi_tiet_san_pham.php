@@ -90,6 +90,7 @@
                         <div><span class="title">Loại màn hình</span> <span><?=$r->loaiManHinh?>&nbsp;</span></div>
                         <div><span class="title">Độ phân giải</span> <span><?=$r->doPhanGiai?>&nbsp;</span></div>
                         <div><span class="title">Kích thước</span> <span><?=$r->kichThuot?>&nbsp;</span></div>
+                        <div><span class="title">Camera</span> <span><?=$r->camera?>&nbsp;</span></div>
                         <div><span class="title">Cảm ứng</span> <span><?=$r->camUng?>&nbsp;</span></div>
                         <div><span class="title">Kiểu dáng</span> <span><?=$r->kieuDang?>&nbsp;</span></div>
                         <div><span class="title">Trọng lượng (g)</span> <span><?=$r->trongLuong?>g&nbsp;</span></div>

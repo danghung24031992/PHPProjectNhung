@@ -28,7 +28,7 @@ function xoa_loaiSP($ma){
 }
 
 function them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
-                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
+                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$camera,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                $cpu,$ram,$rom,$moi,$giacu){
     global $wpdb;
     $ngaytao=date('Y-m-d');
@@ -36,7 +36,7 @@ function them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $qua
     
     $wpdb->query("INSERT INTO dt_sanpham SET tenSanPham='$tensp', maDM='$madm', maLoai='$maloai', giaNhap='$gianhap', giaBan='$giaban', soLuong='$soluong', quaTang='$quaTang', ngayTao='$ngaytao',
         loaiManHinh='$loaimanhinh', doPhanGiai='$dophangiai', kichThuot='$kichthuoc',
-        camUng='$camung', heDieuHanh='$hedieuhanh', kieuDang='$kieudang', trongLuong='$trongluong', baoHanh='$baohanh', ngaySX='$ngaySX', nguoiTao='$user',
+        camUng='$camung',camera='$camera', heDieuHanh='$hedieuhanh', kieuDang='$kieudang', trongLuong='$trongluong', baoHanh='$baohanh', ngaySX='$ngaySX', nguoiTao='$user',
         cpu='$cpu', ram='$ram', rom='$rom',moi='$moi',giacu='$giacu'");
     return mysql_insert_id();
 }
@@ -57,8 +57,13 @@ function ten_danh_muc_san_pham($madm){
     $r=$wpdb->get_row("SELECT tenDanhMuc FROM dt_danhmucsp WHERE maDanhMuc=$madm");
     return $r->tenDanhMuc; 
 }
+function anhsp($id){
+    global $wpdb;
+    $r=$wpdb->get_row("SELECT anh FROM dt_hinhanhsp WHERE id=$id");
+    return $r->anh; 
+}
 function cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
-                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
+                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$camera,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                 $cpu,$ram,$rom,$moi,$giacu){
     global $wpdb;
     $sql="UPDATE dt_sanpham SET ";
@@ -77,7 +82,7 @@ function cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $sol
     if($quaTang!='')
         $sql.=", quaTang='".$quaTang."'";
     $sql.=" , soLuong='$soluong',loaiManHinh='$loaimanhinh',
-    doPhanGiai='$dophangiai',kichThuot='$kichthuoc',camUng='$camung',
+    doPhanGiai='$dophangiai',kichThuot='$kichthuoc',camUng='$camung',camera='$camera',
     heDieuHanh='$hedieuhanh',kieuDang='$kieudang',trongLuong='$trongluong',baoHanh='$baohanh', ngaySX='$ngaySX',
      cpu='$cpu', ram='$ram', rom='$rom',moi='$moi',giacu='$giacu'";
     
@@ -292,5 +297,73 @@ function dem_so_luong_san_pham_ban($pid){
     global $wpdb;
     $r=$wpdb->get_row("SELECT sum(soLuong) as soLuong FROM dt_chitietdonhang WHERE maSP=$pid");
     return $r->soLuong;
+}
+
+function MailToLienHe($To ,$chude ,$noidung , $traloi ){
+    require '../././PHPMailer/PHPMailerAutoload.php';
+
+    $mail = new PHPMailer;
+
+    $mail->isSMTP();                            // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';             // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                     // Enable SMTP authentication
+    $mail->Username = 'hongnhungkiukiu@gmail.com';          // SMTP username
+    $mail->Password = 'lahongnhung...123'; // SMTP password
+    $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                          // TCP port to connect to
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom('hongnhungkiukiu@gmail.com', 'Thế Giới Số');
+    // $mail->addReplyTo('info@example.com', 'CodexWorld');
+    $mail->addAddress($To);   // Add a recipient
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    $mail->isHTML(true);  // Set email format to HTML
+
+
+    $bodyContent = '<p>Chào bạn! Thật vui khi biết bạn quan tâm đến chúng tôi.</b></p>';
+    $bodyContent .= '<h3>TRẢ LỜI CÂU HỎI LIÊN HỆ:</h3>';
+    $bodyContent .= '<p>Chủ đề :';
+    $bodyContent .= $chude;
+    $bodyContent .='</b></p>';
+    $bodyContent .= '<p> Câu hỏi :';
+    $bodyContent .=$noidung;
+    $bodyContent .='</b></p>';
+    $bodyContent .= '<p>Trả lời câu hỏi:</b></p>';
+    $bodyContent .= '<p>';
+    $bodyContent .= $traloi;
+    $bodyContent .='</b></p>';
+    $bodyContent .= 'Chúc quý khách hàng mua sắm vui vẻ và có một ngày tốt lành tại Thế Giới Số!';
+    $bodyContent .= '<p>Thế Giới Số - Xin chân thành cảm ơn!</p>';
+    $mail->Subject = 'Chào mừng quý khách đã đến với Thế Giới Số - Hệ Thống Siêu Thị Điện Máy, Máy Tính Hàng Đầu Việt Nam';
+    $mail->Body    = $bodyContent;
+
+    if(!$mail->send()) {
+        // echo 'Message could not be sent.';
+        // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        // echo 'Message has been sent';
+    }
+}
+
+function isItValidDate($date) {
+ if(preg_match("/^(\d{4})-(\d{2})-(\d{2})$/", $date, $matches)) 
+  {
+   if(checkdate($matches[2], $matches[3], $matches[1]))
+    { 
+     return true;
+    }
+  }
+ } 
+
+function debugLog($debugStr){
+    //echo $debugStr; die();
+    echo '<script language="javascript">';
+    echo 'alert("';
+    echo $debugStr;
+    echo  '")';
+    echo '</script>';
+    // die();
 }
 ?>

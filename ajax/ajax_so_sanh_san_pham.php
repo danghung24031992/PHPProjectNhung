@@ -19,6 +19,7 @@ if(count($_SESSION['compare'])){
                         <tr><td>Độ phân giải</td></tr>
                         <tr><td>Kích thước</td></tr>
                         <tr><td>Cảm ứng</td></tr>
+                        <tr><td>Camera</td></tr>
                         <tr><td>Kiểu dáng</td></tr>
                         <tr><td>Trọng lượng (g)</td></tr>
                         <tr><td>CPU</td></tr>

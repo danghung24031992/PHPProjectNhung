@@ -114,13 +114,13 @@ session_start();
               <input type="hidden" value="tim_kiem" name="ac" />
             </form>
           </div>
-          <img src="images/bao__hanh.png" style="width: auto; display:block; height: 50px; margin-top: 10px;" >
+          <img src="images/bao_hanh.png" style="width: auto; display:block; height: 50px; margin-top: 10px;" >
         </div>
          <div class="clr"></div>	
       </div>
-      <div>
+      <!-- <div>
           <a href="#"><img src="images/lienhe1.png" style="width: auto; float: right; margin-top: -15px;"></a>
-      </div>
+      </div> -->
     </div>	<!--end header-->
     <!-- Ảnh liên hệ -->
     <div id="pillmenu">

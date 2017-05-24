@@ -141,7 +141,7 @@
                 <?php 
                 foreach($masp_het_hang as $mhh){
                     echo '<p><b>- '.lay_ten_san_pham($mhh).'</b> không còn đủ số lượng đặt mua</p>';
-                }
+                }// thẻ <b> </b> in đậm chữ
                 ?>
             </div>
         <?
@@ -240,9 +240,9 @@
             
             <table style="margin-top: 32px;">
                 <!--<tr><td><a href="dat_hang.php"><img src="images/dat_hang.png" style="border: none; width: 110px; height: 24px" /></a></td></tr>-->
-                <tr><td><input type="image" name="submit_customer" src="images/dat_hang.png" style="border: none; width: 110px; height: 24px" onclick=" return checkSubmitOrder();" /></td></tr>
+                <tr><td><input type="image" name="submit_customer" src="images/dat_hang.png" style="border: none; width: 110px; height: 24px" onclick=" return checkSubmitOrder(); MailToDathang($email)" /></td></tr>
             </table>
-        
+         
         </form>
     </div>
 </div><!--end #maincolumn-page-->

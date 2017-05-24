@@ -74,7 +74,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                 <strike>
                 <i>
                 <?php 
-                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                    if ($dm->giacu >0) { ;
                     echo  number_format($dm->giacu);
                     echo "VNĐ";
                 }
@@ -82,7 +82,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                 </i>
                 </strike>
                 </span>
-                <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                <span class="price"><?=number_format($dm->giaBan)?> VNĐ</span>
                  <span style="color: #02887b ;position: absolute; bottom: 0;  text-align:center; width: 100%;">
                    <?php
                    if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
@@ -130,7 +130,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                 <strike>
                 <i>
                 <?php 
-                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                    if ($dm->giacu >0) { ;
                     echo  number_format($dm->giacu);
                     echo "VNĐ";
                 }
@@ -138,7 +138,7 @@ function danh_sach_san_pham($ac,$loai,$id){
                 </i>
                 </strike>
                 </span>
-                <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                <span class="price"><?=number_format($dm->giaBan)?> VNĐ</span>
                  <span style="color: #02887b ;position: absolute; bottom: 0;  text-align:center; width: 100%;">
                    <?php
                    if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
@@ -215,7 +215,7 @@ function tim_kiem_san_pham($loai, $hang, $tugia, $dengia){
                 <strike>
                 <i>
                 <?php 
-                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                    if ($dm->giacu >0) {;
                     echo  number_format($dm->giacu);
                     echo "VNĐ";
                 }
@@ -223,7 +223,7 @@ function tim_kiem_san_pham($loai, $hang, $tugia, $dengia){
                 </i>
                 </strike>
                 </span>
-                <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                <span class="price"><?=number_format($dm->giaBan)?> VNĐ</span>
                 <span style="color: #02887b">
                    <?php
                    if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
@@ -550,7 +550,7 @@ function san_pham_so_sanh($loaiID,$catID,$price){
         <a href="chi_tiet_san_pham.php?id=<?=$n->maSP?>"><img src="sanpham/<?=$anh?>" /></a>
         <h3><a href="chi_tiet_san_pham.php?id=<?=$n->maSP?>"><?=$n->tenSanPham?></a></h3>
         
-         <span class="price">Giá: <?php echo number_format($n->giaBan);?> VNĐ</span>
+         <span class="price"><?php echo number_format($n->giaBan);?> VNĐ</span>
           <span style="color: #02887b">
                    <?php
                    if($n->quaTang!="") {echo "<img src='images/wa_3.png' style='margin:auto'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
@@ -597,6 +597,7 @@ function thong_tin_san_pham_so_sanh($pid,$i){
           <tr><td><?=$r->doPhanGiai?>&nbsp;</td></tr>
           <tr><td><?=$r->kichThuot?>&nbsp;</td></tr>
           <tr><td><?=$r->camUng?>&nbsp;</td></tr>
+          <tr><td><?=$r->camera?>&nbsp;</td></tr>
           <tr><td><?=$r->kieuDang?>&nbsp;</td></tr>
           <tr><td><?=$r->trongLuong?>g&nbsp;</td></tr>
           <tr><td><?=$r->cpu?>&nbsp;</td></tr>
@@ -728,12 +729,89 @@ function tong_tien_don_hang($madh){
     return 0;
 }
 
+function MailToRegister($To){
+    
+    require './PHPMailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+
+    $mail->isSMTP();                            // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';             // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                     // Enable SMTP authentication
+    $mail->Username = 'hongnhungkiukiu@gmail.com';          // SMTP username
+    $mail->Password = 'lahongnhung...123'; // SMTP password
+    $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                          // TCP port to connect to
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom('hongnhungkiukiu@gmail.com', 'Thế Giới Số');
+    // $mail->addReplyTo('info@example.com', 'CodexWorld');
+    $mail->addAddress($To);   // Add a recipient
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    $mail->isHTML(true);  // Set email format to HTML
+
+
+    $bodyContent = '<p>Chào bạn! Thật vui khi biết bạn quan tâm đến chúng tôi.</b></p>';
+     $bodyContent .= '<p>Là thành viên của Thế Giới Số, quý khách hàng sẽ là người đầu tiên nhận được tin tức về những chương trình khuyến mãi và giảm giá đặc biệt của Pico. Ngoài ra, những thông tin về các mặt hàng mới nhất sẽ luôn được cập nhật đến quý khách hàng.</p>';
+    $bodyContent .= 'Chúc quý khách hàng mua sắm vui vẻ và có một ngày tốt lành tại Thế Giới Số!';
+    $bodyContent .= '<p>Thế Giới Số - Xin chân thành cảm ơn!</p>';
+    $mail->Subject = 'Chào mừng quý khách đã đến với Thế Giới Số - Hệ Thống Siêu Thị Điện Máy, Máy Tính Hàng Đầu Việt Nam';
+    $mail->Body    = $bodyContent;
+
+    if(!$mail->send()) {
+        // echo 'Message could not be sent.';
+        // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        // echo 'Message has been sent';
+    }
+}
+
 function debugLog($debugStr){
     //echo $debugStr; die();
     echo '<script language="javascript">';
-    echo 'alert(".$debugStr.")';
+    echo 'alert("';
+    echo $debugStr;
+    echo  '")';
     echo '</script>';
     die();
+}
+function MailToDathang($To){
+    
+    require './PHPMailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+
+    $mail->isSMTP();                            // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';             // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                     // Enable SMTP authentication
+    $mail->Username = 'hongnhungkiukiu@gmail.com';          // SMTP username
+    $mail->Password = 'lahongnhung...123'; // SMTP password
+    $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                          // TCP port to connect to
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom('hongnhungkiukiu@gmail.com', 'Thế Giới Số');
+    // $mail->addReplyTo('info@example.com', 'CodexWorld');
+    $mail->addAddress($To);   // Add a recipient
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    $mail->isHTML(true);  // Set email format to HTML
+
+
+    $bodyContent = '<p>Chào bạn! Thật vui khi biết bạn quan tâm đến chúng tôi.</b></p>';
+     $bodyContent .= '<p>Là thành viên của Thế Giới Số, quý khách hàng sẽ là người đầu tiên nhận được tin tức về những chương trình khuyến mãi và giảm giá đặc biệt của Pico. Ngoài ra, những thông tin về các mặt hàng mới nhất sẽ luôn được cập nhật đến quý khách hàng.</p>';
+    $bodyContent .= 'Chúc quý khách hàng mua sắm vui vẻ và có một ngày tốt lành tại Thế Giới Số!';
+    $bodyContent .= '<p>Thế Giới Số - Xin chân thành cảm ơn!</p>';
+    $mail->Subject = 'Chào mừng quý khách đã đến với Thế Giới Số - Hệ Thống Siêu Thị Điện Máy, Máy Tính Hàng Đầu Việt Nam';
+    $mail->Body    = $bodyContent;
+
+    if(!$mail->send()) {
+        // echo 'Message could not be sent.';
+        // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        // echo 'Message has been sent';
+    }
 }
 
 ?>

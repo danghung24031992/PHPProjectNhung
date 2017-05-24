@@ -42,7 +42,7 @@
                     <td style="text-align: center"><?=$c?></td>
                     <td><?=lay_ten_san_pham($r->maSP)?></td>
                     <td><?=$r->noiDung?></td>
-                    <td style="text-align: center;"><a href="quanly_binhluan.php?ac=del&id=<?=$r->id?>">Xóa</a></td>
+                    <td style="text-align: center;"><a href="quanly_binhluan.php?ac=del&id=<?=$r->id?>"><img src="images/delete.png" /></a></td>
                 </tr>
                 <?
                 $c+=1;

@@ -28,6 +28,15 @@ if(($_GET['ac']=="del") && ($_GET['madh']!="")){
                  </cite>
             </div>
             <div class="export">
+                <form method="GET" action="export/exportByTime.php">
+                  Từ ngày:
+                  <input type="date" name="endday" min="1979-12-31" max="<? echo date('Y-m-d'); ?>"/>
+                  Đến ngày:
+                  <input type="date" name="beginday" min="1979-12-31" max="<? echo date('Y-m-d'); ?>" />
+                  <input type="submit" value=" Tìm kiếm">
+                </form>
+            </div>
+            <div class="export">
                 <button style="margin-left: 45px;margin-bottom: 20px; font-size: 18px" type="button" class="btn btn-info">
                 <a href="export/statistics_day.php" style="color: #240ed0;">Thống kê theo ngày</a>
                 </button>
@@ -53,7 +62,7 @@ if(($_GET['ac']=="del") && ($_GET['madh']!="")){
                         <th>Xóa</th>
                     </tr>
                     <?
-                    $dh=$wpdb->get_results("SELECT maDH , maKH, ngayDatHang, trangThai  FROM dt_donhang");
+                    $dh=$wpdb->get_results("SELECT maDH , maKH, ngayDatHang, trangThai  FROM dt_donhang ORDER BY maDH ASC" );
                     foreach($dh as $d){
                         $madh=$d->maDH;
                         $makh=$d->maKH;

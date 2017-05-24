@@ -94,10 +94,13 @@ if($_POST){
             </form>
             <div class="">
                                     <a href="" style="margin-left: 50px">
-                                        <iframe width="600" height="280" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%207%2F12%2F131%20Phan%20%C4%90%C3%ACnh%20Gi%C3%B3t&key=AIzaSyDhppSdhKVHpN4pH-yYcYmsO8QB1QWVyR4" allowfullscreen> </iframe>
+                                        <iframe width="600" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%207%2F12%2F131%20Phan%20%C4%90%C3%ACnh%20Gi%C3%B3t&key=AIzaSyDhppSdhKVHpN4pH-yYcYmsO8QB1QWVyR4" allowfullscreen> </iframe>
                                     </a>
                                 </div>
 
+        </div>
+        <div>
+            <a href=""> <img src="images/lien_heee.jpg" style="width: 400px">  </a>
         </div>
         
     </div>

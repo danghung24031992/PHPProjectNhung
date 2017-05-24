@@ -94,15 +94,15 @@
             <tr>
                 <td class="success-shopping">
                     <p class="title-success-shopping">BẠN ĐÃ ĐẶT HÀNG THÀNH CÔNG</p>
-                    <p class="info-success-shopping">Cảm ơn bạn đã đặt mua hàng của chúng tôi. Thông tin đặt hàng đã được gửi qua mail của bạn.
+                    <p class="info-success-shopping" style="font-size: 16px">Cảm ơn bạn đã đặt mua hàng của chúng tôi.</p> Thông tin đặt hàng đã được gửi qua mail của bạn.
                      Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất để thực hiện mua bán.
-                     <br/><p class="info-success-shopping-alert">Miễn phí vận chuyển nội thành Hà Nội với đơn hàng trên 20.000.000 vnđ</p></p>
+                     <br/><p class="info-success-shopping-alert">Miễn phí vận chuyển nội thành Hà Nội và với đơn hàng trên 50.000.000 vnđ được miễn phí vận chuyển bán kính 100km</p></p>
                 </td>
             </tr>
         </table>
 		<form name="shoppingcart_detail" method="POST">
             <table cellpadding="5" cellspacing="1" border="0" class="tbl-shoppingcart-detail" width="700px">
-                <tr class="title-checkout"><td colspan="4">THÔNG TIN MUA HÀNG</td></tr>
+                <tr class="title-checkout"><td colspan="4" style="background-color: #21b91e">THÔNG TIN MUA HÀNG</td></tr>
                 <tr class="shoppingcart-detail-title">
                     <th>Tên sản phẩm</th>
                     <th>Đơn giá</th>

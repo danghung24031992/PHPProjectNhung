@@ -8,6 +8,7 @@ session_start();
 
  require_once('header.php');
  //require_once('sidebar-left.php');
+ ($_GET['id'])?$id=$_GET['id']:$id="";
 ?>
 
 <div id="slider-wrap">
@@ -19,10 +20,10 @@ session_start();
     <div class="right-slide">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <img src="images/slide-1.png" alt="" />
-                <img src="images/slide-2.png" alt="" />
-                <img src="images/slide.png" alt="" />
-                <img src="images/slide-3.png" alt="" />
+                <img src="images/slide10.png" alt="" />
+                <img src="images/slide11.png" alt="" />
+                <img src="images/slide12.png" alt="" />
+                <img src="images/slide14.png" alt="" />
             </div>
             
         </div>
@@ -58,7 +59,7 @@ session_start();
                 <strike>
                 <i>
                 <?php 
-                    if ($sp->giacu >0) { echo "Giá cũ: ";
+                    if ($sp->giacu >0) { 
                     echo  number_format($sp->giacu);
                     echo "VNĐ";
                 }
@@ -66,14 +67,15 @@ session_start();
                 </i>
                 </strike>
                 </span>
-                <span class="price">Giá: <?php echo number_format($sp->giaBan);?> VNĐ</span>
+                <span class="price"><?php echo number_format($sp->giaBan);?> VNĐ</span>
                 <a href=""><!-- <img src="images/wa.png" style="margin-left: 80px"> --></a>
                <span style="color: #02887b ;position: absolute; bottom: 0;  text-align:center; width: 100%;">
                    <?php
-                   if($sp->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
+                   if($sp->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px; '>" ; } //"<img src='images/wa.png' style='margin-left: 80px'>";
                   
                     ?>
                </span>
+              <!--  <a href="" style="position: absolute;bottom: 0; text-align:center; margin-left: 12px"><img src="images/mua_hang.png" id="add-shoppingcart" class="add-shoppingcart" alt="<?=$id?>"></a> -->
             </div>
             
             <?php }
@@ -85,5 +87,22 @@ session_start();
     
     </div>
 </div><!--end #maincolumn-->
+
+<script>
+    $('.add-shoppingcart').click(function(){
+      var pid = this.alt;
+      var soLuong = <?php echo  $r->soLuong - dem_so_luong_san_pham_ban($r->maSP);?>;
+      $.ajax({
+        url: 'ajax/ajax_add_shoppingcart.php?pid='+ pid +'&so_luong=' + soLuong,
+        success: function(data) {
+            if (soLuong > 0) {
+                $('#shoppingcart-header').html(data);
+            }else{
+                alert("Sản phẩm đã hết hàng.");
+            }
+      }
+  });    
+  });/*end click event add to shoppingcart*/
+</script>
 <?php require_once('sidebar-right.php');?>
 <?php require_once('footer.php');?>

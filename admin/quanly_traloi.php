@@ -17,9 +17,15 @@
     if($_POST){
         $answer=$_POST['answer'];
         $sub=$_POST['subject'];
-        if($wpdb->query("UPDATE dt_lienhe SET traLoi='$answer' WHERE id=$qid"))
+        $to = $_POST['email'];
+        $content = $_POST['content'];
+        if($wpdb->query("UPDATE dt_lienhe SET traLoi='$answer' WHERE id=$qid")){
+            MailToLienHe($to , $sub ,$content , $answer);
             $msg="Đã trả lời";
-        else $msg="Trả lời không thành công";
+        }
+        else {
+            $msg="Trả lời không thành công";
+        }
                 
     }
 
@@ -37,7 +43,7 @@
             
             $r=$wpdb->get_row("SELECT * FROM dt_lienhe WHERE id=$qid");
             ?>
-            <form method="POST" name="traloi">
+            <form method="POST" name="traLoi">
             <table cellpadding="0" cellspacing="6" border="0" class="tbl-lien-he">
                 <tr><td class="err-lienhe"><?=$msg?></td></tr>
                 <tr>

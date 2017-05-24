@@ -21,7 +21,10 @@ if($_POST){
     
     if($ac=="new"){
         if(tao_moi_khach_hang($hoten, $gioitinh, $email, $matkhau, $diachi, $dienthoai)>0)
+        {
+            MailToRegister($email);
             $msg="Tạo mới khách hàng thành công";
+        }
         else $msg="Tạo mới khách hàng không thành công";
     }
 	

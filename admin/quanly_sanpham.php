@@ -20,7 +20,7 @@
     
     $mssg='';
     $msg=array(1=>'Bạn đã Thêm sản phẩm thành công',
-                2=>'Error: Thêm sản phẩm không thành công',
+                2=>' Thêm sản phẩm không thành công',
                 3=>'Cập nhật sản phẩm thành công',
                 4=>'Cập nhật sản phẩm không thành công',
                 5=>'Xóa sản phẩm thành công'
@@ -32,6 +32,7 @@
         $maloai = $_POST['maloai'];
         $gianhap=$_POST['gianhap'];
         $giaban=$_POST['giaban'];
+
         $soluong=$_POST['soluong'];
         $quaTang=$_POST['quaTang'];
         $ngaySX=$_POST['ngaysx'];
@@ -40,6 +41,7 @@
         $dophangiai=$_POST['dophangiai'];
         $kichthuoc=$_POST['kichthuoc'];
         $camung=$_POST['camung'];
+        $camerag=$_POST['camera'];
         $hedieuhanh=$_POST['hedieuhanh'];
         $kieudang=$_POST['kieudang'];
         $trongluong=$_POST['trongluong'];
@@ -51,16 +53,44 @@
         $rom=$_POST['rom'];
         $moi=$_POST['moi'];
         $giacu=$_POST['giacu'];
+
+        //Validate
+        if ($maloai == '') {
+            $mssg .= 'Bạn chưa chọn loại sảm phẩm</br>';
+        }
+        if ($tensp == '') {
+            $mssg .= 'Bạn chưa nhập tên sảm phẩm</br>';
+        }
+        if ($madm == '') {
+            $mssg .= 'Bạn chọn hãng sản xuất</br>';
+        }
+        if ($gianhap == '') {
+            $mssg .= 'Bạn chưa nhập giá nhập</br>';
+        }
+        if ($giaban == '') {
+            $mssg .= 'Bạn chưa nhập giá bán</br>';
+        }
+        if ($soluong == '') {
+            $mssg .= 'Bạn chưa nhập số lượng</br>';
+        }
+        if(!isItValidDate($ngaySX))
+        {
+           $mssg .= 'Bạn chưa chọn ngày sản xuất</br>';
+        }
       
         //echo $cpu.'---'.$hedieuhanh;
         
         
-        if($ac=='new'){
+        if($ac=='new' && $mssg == ''){
             $masp=them_san_pham($tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
-                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
+                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$camera,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                 $cpu,$ram,$rom,$moi,$giacu);
 
-            ($masp>0)?$mssg=$msg[1]:$mssg=$msg[2];
+            if ($masp>0){
+                $mssg=$msg[1];
+            }else{
+                $mssg=$msg[2];
+            }
             if($_FILES['anh']['name']!=''){
                 upload_hinh_san_pham('anh',$masp,1);
             }
@@ -74,7 +104,7 @@
         } else if($ac=='edit' && $masp!=''){
                
                 if(cap_nhat_san_pham($masp,$tensp, $madm, $maloai, $gianhap, $giaban, $soluong, $quaTang,
-                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
+                                $loaimanhinh,$dophangiai,$kichthuoc,$camung,$camera,$hedieuhanh,$kieudang,$trongluong,$baohanh,$ngaySX,$user,
                                 $cpu,$ram,$rom,$moi,$giacu)){
                     $mssg=$msg[3];
                 } else $mssg=$msg[4];
@@ -113,7 +143,7 @@
             </div>
             <div class="tab-manag">
                     <a href="quanly_sanpham.php?ac=new" <?=($ac=="new")?"class='selected'":"" ?>>THÊM MỚI</a>
-                    <a href="quanly_sanpham.php" <?=($ac==""||$ac=='edit')?"class='selected'":"" ?>>CẬP NHẬT</a>
+                    <!-- <a href="quanly_sanpham.php" <?=($ac==""||$ac=='edit')?"class='selected'":"" ?>>CẬP NHẬT</a> -->
             </div>
             <div class="create-cat">
                 <div class="content-manag">
@@ -121,7 +151,7 @@
                     <div id="manager-sp">
                     <form name="create_sp" enctype="multipart/form-data" method="POST" id="create-sp" action="quanly_sanpham.php?ac=new" style="display:<?=($ac=='new')?'block':'none'?>">
 
-                        <label>Loại sản phẩm</label>
+                        <label>Loại sản phẩm <font class="validate">*</font></label>
                         <select name="maloai">
                             <option value="">---Chọn---</option>
                             <?
@@ -135,7 +165,7 @@
                         <label>Tên sản phẩm <font class="validate">*</font></label>
                         <input type="text" name="tensp" class="txtbox-1" style="width: 250px" /><div class="clr"></div>
                         
-                        <label>Hãng sản xuất</label>
+                        <label>Hãng sản xuất <font class="validate">*</font></label>
                         <select name="madm">
                             <option value="">---Chọn---</option>
                             <?
@@ -146,16 +176,16 @@
                             <?}?>
                         </select><div class="clr"></div>
                         
-                        <label>Giá nhập(VND)</label>
+                        <label>Giá nhập(VND) <font class="validate">*</font></label>
                         <input type="text" name="gianhap" style="width: 173px;" /><div class="clr"></div>
                          
                          <label>Giá Cũ-chưa khuyến mại(VND)</label>
                         <input type="text" name="giacu" style="width: 173px;" /><div class="clr"></div>
 
-                        <label>Giá bán(VND)</label>
+                        <label>Giá bán(VND) <font class="validate">*</font></label>
                         <input type="text" name="giaban" style="width: 173px;" /><div class="clr"></div>
                         
-                        <label>Số lượng</label>
+                        <label>Số lượng <font class="validate">*</font></label>
                         <input type="text" name="soluong" style="width: 173px;" /><div class="clr"></div>
 
                         <label>Ảnh minh họa</label>
@@ -168,7 +198,7 @@
                         <input type="file" name="anh2" /><div class="clr"></div>
                         
                         <div id="trip">
-                            <label>Ngày sản xuất</label>
+                            <label>Ngày sản xuất <font class="validate">*</font></label>
                             <input type="text" id="leavedate" name="ngaysx" value="From: yy/mm/dd" title="From: yy/mm/dd"/><div class="clr"></div>
                         </div>
                         
@@ -190,6 +220,8 @@
                                 <label>Cảm ứng</label>
                                 <input type="radio" name="camung" value="Có" />Có
                                 <input type="radio" name="camung" value="Không" />Không<div class="clr"></div>
+                                <label>Camera</label>
+                                <input type="text" name="camera" /><div class="clr"></div>
                             </div>
                             
                             <div class="tinhnang-item">
@@ -327,6 +359,9 @@
                                 <label>Cảm ứng</label>
                                 <input type="radio" name="camung" value="Có" <?=($r->camUng=="Có")?'checked=""':''?> />Có
                                 <input type="radio" name="camung" value="Không" <?=($r->camUng=="Không")?'checked=""':''?> />Không<div class="clr"></div>
+
+                                <label>Camera</label>
+                                <input type="text" name="camera" value="<?=$r->camera?>" /><div class="clr"></div>
                             </div>
                             
                             <div class="tinhnang-item">

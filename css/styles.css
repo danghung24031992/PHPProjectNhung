@@ -351,7 +351,7 @@
     font-size: 13px;
 }
 .shoppingcart-detail-title{
-    background-color: #7F92A4;
+    background-color: #18d664;
     background-position: center center; /*thiết lập vị trí ảnh nền ( giữa giữa)*/
     color: #FFFFFF;
     font-family: "Courier New",Courier,mono;
@@ -399,7 +399,7 @@
     color: #484848;
 }
 .title-checkout{
-    background-color: #7F92A4;
+    background-color: #21b91e;
     background-position: center center;
     color: #FFFFFF;
     font-family: "Courier New",Courier,mono;
@@ -410,7 +410,7 @@
     background-color: #FFFFFF;
 }
 .checkout-label{
-    background-color: #BED3E8;
+    background-color: #62ef8d;
     width: 180px;
     color: #000000;
 }

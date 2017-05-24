@@ -83,7 +83,7 @@
                         <strike>
                             <i>
                                 <?php 
-                                    if ($dm->giacu >0) { echo "Giá cũ: ";
+                                    if ($dm->giacu >0) {
                                     echo  number_format($dm->giacu);
                                     echo "VNĐ";
                                 }
@@ -91,7 +91,7 @@
                             </i>
                         </strike>
                     </span>
-                    <span class="price">Giá: <?=number_format($dm->giaBan)?> VNĐ</span>
+                    <span class="price"><?=number_format($dm->giaBan)?> VNĐ</span>
                     <span style="color: #02887b ; position: absolute; bottom: 0;  text-align:center; width: 100%;">
                     <?php
                         if($dm->quaTang!="") {echo "<img src='images/wa_2.png' style='margin-top:4px'/>" ; }

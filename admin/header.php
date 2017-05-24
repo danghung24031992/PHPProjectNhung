@@ -19,7 +19,7 @@
       <script language="javascript">
         
         $(document).ready(function() { /*Phương thức ready(fn) trong jQuery sẽ Bind một hàm để được thực thi bất cứ khi nào DOM sẵn sàng để được thao tác*/
-        	$('#trip input#leavedate, #trip input#returndate').datepicker({ dateFormat: 'yy-m-d', showOn: 'button', buttonImage: 'images/calendar_icon.jpg', buttonImageOnly: true });  /*datepicker ( dùng để hiện bảng chọn ngày tháng với nhiều tùy chọn khá thú vị)*/
+        	$('#trip input#leavedate, #trip input#returndate').datepicker({ dateFormat: 'yy-mm-dd', showOn: 'button', buttonImage: 'images/calendar_icon.jpg', buttonImageOnly: true });  /*datepicker ( dùng để hiện bảng chọn ngày tháng với nhiều tùy chọn khá thú vị)*/
         });
         
       </script>

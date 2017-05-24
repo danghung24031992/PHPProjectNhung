@@ -28,7 +28,8 @@ if ($data == 0) {
     $PHPExcel->getActiveSheet()->setCellValue('E1', 'Ngày đặt hàng');
     $PHPExcel->getActiveSheet()->setCellValue('F1', 'Số sản phẩm');
     $PHPExcel->getActiveSheet()->setCellValue('G1', 'Tổng tiền');
-    $PHPExcel->getActiveSheet()->setCellValue('H1', 'Thanh toán');
+    $PHPExcel->getActiveSheet()->setCellValue('H1', 'Đơn vị');
+    $PHPExcel->getActiveSheet()->setCellValue('I1', 'Thanh toán');
 
 // Bước 7: Lặp data và gán vào file
 // Vì row đầu tiên là tiêu đề rồi nên những row tiếp theo bắt đầu từ 2
@@ -54,7 +55,7 @@ if ($data == 0) {
         }
         $ct=$db->get_row("SELECT sum(soLuong) as soluong  FROM dt_chitietdonhang WHERE maDonHang=$madh");
         $qTien=$db->get_row("SELECT sum(soLuong*donGia) as tongtien FROM dt_chitietdonhang WHERE maDonHang=$madh");
-             
+        $tt=$db->get_row("SELECT tenKH , dienThoai  FROM dt_thanhtoan WHERE maHoaDon=$madh");
         $stt++;
         // A1, A2, A3, ...
         $PHPExcel->getActiveSheet()->setCellValue('A' . $rowNumber, $stt);
@@ -62,12 +63,13 @@ if ($data == 0) {
         // B1, B2, B3, ...
         $PHPExcel->getActiveSheet()->setCellValue('B' . $rowNumber, $index['maDH']);
         // C1, C2, C3, ...
-        $PHPExcel->getActiveSheet()->setCellValue('C' . $rowNumber, $nameKH);
-        $PHPExcel->getActiveSheet()->setCellValue('D' . $rowNumber, $dienThoaiKH);
+        $PHPExcel->getActiveSheet()->setCellValue('C' . $rowNumber, $tt['tenKH']);
+        $PHPExcel->getActiveSheet()->setCellValue('D' . $rowNumber, $tt['dienThoai']);
         $PHPExcel->getActiveSheet()->setCellValue('E' . $rowNumber, $index['ngayDatHang']);
         $PHPExcel->getActiveSheet()->setCellValue('F' . $rowNumber, $ct['soluong']);
         $PHPExcel->getActiveSheet()->setCellValue('G' . $rowNumber, number_format($qTien['tongtien']));
-        $PHPExcel->getActiveSheet()->setCellValue('H' . $rowNumber, $trangThai);
+        $PHPExcel->getActiveSheet()->setCellValue('H' . $rowNumber, 'vnd');
+        $PHPExcel->getActiveSheet()->setCellValue('I' . $rowNumber, $trangThai);
 
         // Tăng row lên để khỏi bị lưu đè
         $rowNumber++;
