@@ -77,7 +77,6 @@
         {
            $mssg .= 'Bạn chưa chọn ngày sản xuất</br>';
         }
-      
         //echo $cpu.'---'.$hedieuhanh;
         
         
@@ -132,7 +131,6 @@
 
 
 ?>
-
 <div id="content">
     <div class="main-page">
         <div id="manager" >
@@ -143,13 +141,13 @@
             </div>
             <div class="tab-manag">
                     <a href="quanly_sanpham.php?ac=new" <?=($ac=="new")?"class='selected'":"" ?>>THÊM MỚI</a>
-                    <!-- <a href="quanly_sanpham.php" <?=($ac==""||$ac=='edit')?"class='selected'":"" ?>>CẬP NHẬT</a> -->
+                    <!-- <a href="quanly_sanpham.php" <?//=($ac==""||$ac=='edit')?"class='selected'":"" ?>>CẬP NHẬT</a> -->
             </div>
             <div class="create-cat">
                 <div class="content-manag">
                     <div class="msg"><?=$mssg?></div>
                     <div id="manager-sp">
-                    <form name="create_sp" enctype="multipart/form-data" method="POST" id="create-sp" action="quanly_sanpham.php?ac=new" style="display:<?=($ac=='new')?'block':'none'?>">
+                    <form name="create_sp" enctype="multipart/form-data" method="POST" id="create_sp" action="quanly_sanpham.php?ac=new" style="display:<?=($ac=='new')?'block':'none'?>">
 
                         <label>Loại sản phẩm <font class="validate">*</font></label>
                         <select name="maloai">
@@ -177,16 +175,16 @@
                         </select><div class="clr"></div>
                         
                         <label>Giá nhập(VND) <font class="validate">*</font></label>
-                        <input type="text" name="gianhap" style="width: 173px;" /><div class="clr"></div>
+                        <input type="number" min="0" name="gianhap" style="width: 173px;"  /><div class="clr"></div>
                          
                          <label>Giá Cũ-chưa khuyến mại(VND)</label>
-                        <input type="text" name="giacu" style="width: 173px;" /><div class="clr"></div>
+                        <input type="number" min="0" name="giacu" style="width: 173px;" /><div class="clr"></div>
 
                         <label>Giá bán(VND) <font class="validate">*</font></label>
-                        <input type="text" name="giaban" style="width: 173px;" /><div class="clr"></div>
+                        <input type="number" min="0" name="giaban" style="width: 173px;" /><div class="clr"></div>
                         
                         <label>Số lượng <font class="validate">*</font></label>
-                        <input type="text" name="soluong" style="width: 173px;" /><div class="clr"></div>
+                        <input type="number" min="0" name="soluong" style="width: 173px;" /><div class="clr"></div>
 
                         <label>Ảnh minh họa</label>
                         <input type="file" name="anh" /><div class="clr"></div>
@@ -438,6 +436,7 @@
                     <table cellpadding="0" cellspacing="0" border="0" width="90%" class="manager-info" style="margin: auto;">
                         <tr>
                             <th>TT</th>
+                            <th>Mã sản phẩm</th>
                             <th>Tên sản phẩm</th>
                             <th>Hãng sản xuất</th>
                             <th>Giá nhập</th>
@@ -460,6 +459,7 @@
                         ?>
                         <tr style="background-color:  <?=($count%2==0)?'#EEEEEE':''?>;">
                             <td class="manager-id-field"><?=$count?></td>
+                            <td><?=$r->maSP?></td>
                             <td><?=$r->tenSanPham?></td>
                             <td><?=ten_danh_muc_san_pham($r->maDM)?></td>
                             <td><?=number_format($r->giaNhap)?> VNĐ</td>
